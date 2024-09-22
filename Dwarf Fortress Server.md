@@ -123,7 +123,7 @@ If I had disabled sound beforehand I wouldn't have known this problem had the sl
 
 either way, now with deactivated sound back on my LXC container, I booted up the server (running the dfhack file) and it worked like a charm.
 
-![[DFPlex Client.png]]
+![DFPlex Client.png](https://github.com/Henrique-FB/self-stuff/blob/main/images/DFPlex%20Client.png)
 
 
 #### 3.3📚 In Summary,
@@ -164,7 +164,7 @@ Apparently Tailscale only allows access from machines that are connected to your
 The next thing I tried was ZeroTier. It is basically the same as Hamachi, with the slight difference that you log into your account and manage the servers using a web interface. 
 After having done that, all I needed to do was install ZeroTier on my LXC (find a [random dude](https://www.reddit.com/r/Proxmox/comments/jctd6x/comment/ge9n5m1/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button) on reddit telling me that I needed to change one specific line of one specific proxmox config file), connect to my network, tell everyone else to connect to said network, accept all the connections and done deal. Server working completely flawlessly (except for all the flaws it had. Don't worry I'll get to them).
 
-![[ZeroTier Manager.png]]
+![ZeroTier Manager.png](https://github.com/Henrique-FB/self-stuff/blob/main/images/ZeroTier%20Manager.png)
 #### 4.3📚 In Summary,
 The steps in the network configuration process were:
 - *Not* port forward (for security reasons)
