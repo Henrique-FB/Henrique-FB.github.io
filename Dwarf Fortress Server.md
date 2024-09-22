@@ -42,12 +42,12 @@ Proxmox is a virtualization tool I use to run my home server in, and I generally
 ---
 ## Setup Process
 
-### 1. Proxmox Configuration
+## 1. Proxmox Configuration
 
 [Here, detail the steps for setting up the Proxmox environment. Include information about creating a new virtual machine, allocating resources, and any specific Proxmox settings relevant to game server hosting.]
 
 ---
-### 2. Linux Installation
+## 2. Linux Installation
 
 I created a simple Ubuntu LXC (Linux Container) mostly because I'm more familiar with Ubuntu, and there was no need to create a whole Virtual Machine to run this server in (I ended up doing it anyway for debugging purposes.)
 
@@ -60,7 +60,7 @@ LXC info:
 - I can't see a DF server needing more than 10G of disk space.
 
 ---
-### 3. Dwarf Fortress Server Installation
+## 3. Dwarf Fortress Server Installation
 
 The beginning of this process is extremely simple. 
 
@@ -72,7 +72,7 @@ After some googling about Dwarf Fortress versions (and if on linux, after a lot 
 
 Or so I believed. And that would be the case, if I was running this on a normal machine, with normal specs, a normal setup, etc - And I even did so beforehand on my machine and everything worked out perfectly (works on my machine :P) - But I'm not, and so we aren't quite done yet.
 
-#### 3.1 The First Problem
+### 3.1 The First Problem
 
 Two problems were still left to be solved. 
 
@@ -103,7 +103,7 @@ Or it says it does... but when I try to enter the ip and port to access the WebG
 
 And so we head on to
 
-#### 3.2 The Other Problem
+### 3.2 The Other Problem
 
 I was completely stumped.
 
@@ -126,7 +126,7 @@ either way, now with deactivated sound back on my LXC container, I booted up the
 ![DFPlex Client.png](https://github.com/Henrique-FB/self-stuff/blob/main/images/DFPlex%20Client.png)
 
 
-#### 3.3📚 In Summary,
+### 3.3📚 In Summary,
 The steps I took on the server installation process were:
 - Install DF, DFHack and DFPlex and merge them all in one folder (using Linux CLI tools like `wget`, `cp`, `tar`, `zip` and so on)
 - Emulate a screen on my headless Linux Container for the game to be "displayed" in (using `Xvfb` and `export display`)
@@ -135,7 +135,7 @@ The steps I took on the server installation process were:
 - `./dfhack` on the command line (on the df folder) and access the server's client WebGUI using firefox (other browsers might not work)
 
 ---
-### 4. Network Configuration
+## 4. Network Configuration
 
 Now that we have the DFPlex server running locally, its time to have some fun with network virtualization (or, more specifically, LAN-like network extension).
 
@@ -144,14 +144,14 @@ If you have ever tried your hand at opening any game server you have like either
 2. Forwarded a port on your router
 
 On this project I used... neither.
-#### 4.1 The obvious ways to do it (Port Forwarding or Hamachi)
+### 4.1 The obvious ways to do it (Port Forwarding or Hamachi)
 
 The specific reason why I didn't want to forward a port for this is pretty simple. The application that runs my server (DFPlex) is neither built with network safety in mind, nor maintained, and it gives *anyone* in my network access to my server. This is, as far as I understand, as insecure as connections get, and because I didn't want Soka_The_Network_Bender to show up on my server and do some *weird stuff* ™ to my machine, I quickly decided against it.
 
 The reason for not using hamachi is surprisingly even more simple.
 Although I actually did want to use it (especially because I had done so on my windows computer when first testing DFPlex and it worked flawlessly), I could not for the life of me get it to work on my container. There isn't much more to say, I tried everything I could find on it and it completely refused to work, and so I went in search for other options.
 
-#### 4.2 The not so obvious ways to do it (Tailscale or ZeroTier)
+### 4.2 The not so obvious ways to do it (Tailscale or ZeroTier)
 
 The first other option that came to mind was using Tailscale, another very similar software, and one I was already using to access proxmox on other machines I have (like my cellphone for example) from outside my home.
 
@@ -165,7 +165,7 @@ The next thing I tried was ZeroTier. It is basically the same as Hamachi, with t
 After having done that, all I needed to do was install ZeroTier on my LXC (find a [random dude](https://www.reddit.com/r/Proxmox/comments/jctd6x/comment/ge9n5m1/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button) on reddit telling me that I needed to change one specific line of one specific proxmox config file), connect to my network, tell everyone else to connect to said network, accept all the connections and done deal. Server working completely flawlessly (except for all the flaws it had. Don't worry I'll get to them).
 
 ![ZeroTier Manager.png](https://github.com/Henrique-FB/self-stuff/blob/main/images/ZeroTier%20Manager.png)
-#### 4.3📚 In Summary,
+### 4.3📚 In Summary,
 The steps in the network configuration process were:
 - *Not* port forward (for security reasons)
 - Install and configure ZeroTier ([This comment](https://www.reddit.com/r/Proxmox/comments/jctd6x/comment/ge9n5m1/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button) was especially helpful)
@@ -183,7 +183,7 @@ There were still some things I wanted to do to call this project a success:
 - Let the players go into the game's main menu
 - Make the game pause when no one was in the server
 
-#### 5.1 Saving Game and Main Menu
+### 5.1 Saving Game and Main Menu
 
 For anyone who has played DF before, it might sound weird not being able to save the game. Usually, you simply press ESC and the option to do it pops on your screen. That, needless to say, is not the case when you are running a server.
 
@@ -194,7 +194,7 @@ This lead me into searching a bit about DFHack's **scripts**. When you run the s
 Next step now was making the menu accessible to the players,. After figuring out the quicksave command I expected this to be easy, but it was a big disappointment. My guess is DFPlex's client side simply doesn't have the capability of accessing the menu screen (also called **Leavescreen** on the game files), as any attempt to actually get to it via other means would either 1. not work or 2. just crash the whole server. After about an hour of search I called it and just gave up on it.
 
 
-#### 5.2 Pause Lua script
+### 5.2 Pause Lua script
 
 Pausing the game is an extremely important part of Dwarf Fortress, especially when running it as a server. If the game continues running when no one is playing your fortress is very likely to crumble even after just a day of leaving the Dwarves to do their thing.
 
@@ -249,7 +249,7 @@ Command line:
 - `-time 1800` and `-timeUnits ticks` set the time and the way said time is counted (seconds, ticks, etc)
 - `-command [ check_clients ]` calls the check_clients.lua script when the "repeat" script's time runs out.
 
-#### 5.3 Realization (and how you should test things)
+### 5.3 Realization (and how you should test things)
 
 Now, everything was working as I wanted, but there was one small thing bugging me.
 
@@ -275,7 +275,7 @@ So my script never got to the "pause game" section. The game just already paused
 What a useless fucking tangent ay? At least it serves as a reminder that if you are going to make something, just check if its not *already been made* before. What a waste of a good few hours.
 
 
-#### 5.4📚 In Summary,
+### 5.4📚 In Summary,
 The things I wanted to do regarding Server Management were:
 - Finding a way to save the game
 - Automatically pausing the game when no one is logged in
