@@ -4,7 +4,7 @@
 
 # Introduction
 
-So, after setting up a Proxmox virtual machine, learning how to use it and having some fun with setting up an ARR stack in it, I was stricken with a big craving to play [Dwarf Fortress]([http://www.bay12games.com/dwarves/?)](http://www.bay12games.com/dwarves/?)) (or, DF in short).
+So, after setting up a Proxmox virtual machine, learning how to use it and having some fun with setting up an ARR stack in it, I was stricken with a big craving to play [Dwarf Fortress](http://www.bay12games.com/dwarves/?)) (or, DF in short).
 
 Since I was very excited about having set up a (albeit extremely small) homelab, I thought “why not make it a server that runs on my machine?”.
 
