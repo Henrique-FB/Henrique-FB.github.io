@@ -4,7 +4,7 @@
 
 # Introduction
 
-So, after setting up a Proxmox virtual machine, learning how to use it and having some fun with setting up an ARR stack in it, I was stricken with a big craving to play [Dwarf Fortress](http://www.bay12games.com/dwarves/?)) (or, DF in short).
+So, after setting up a Proxmox virtual machine, learning how to use it and having some fun with setting up an ARR stack in it, I was stricken with a big craving to play [Dwarf Fortress](http://www.bay12games.com/dwarves/?) (or, DF in short).
 
 Since I was very excited about having set up a (albeit extremely small) homelab, I thought “why not make it a server that runs on my machine?”.
 
@@ -12,7 +12,7 @@ Since I was very excited about having set up a (albeit extremely small) homelab,
 
 ## 📚 Project Overview
 
-Dwarf Fortress is a computer fantasy simulation game. Setting it up as a server allows not only for multiplayer play (usingthe **DFHack** and **DFPlex** plugins), but also for safe access anywhere (using the **ZeroTier** networking virtualization platform), simple and easy to setup game backups, and much more.
+Dwarf Fortress is a computer fantasy simulation game. Setting it up as a server allows not only for multiplayer play (using the **DFHack** and **DFPlex** plugins), but also for safe access anywhere (using the **ZeroTier** networking virtualization platform), simple and easy to setup game backups, and much more.
 
 This project demonstrates skills in
 
@@ -24,7 +24,7 @@ This project demonstrates skills in
 
 ## 📚 Technologies Used
 
-- **Proxmox** (Virtualization environment): I generally have every one of my server instances set up as Linux Containers inside it, they are very resource efficient so even with the 6GB of RAM my server has everything works pretty well)
+- **Proxmox** (Virtualization environment): I generally have every one of my server instances set up as Linux Containers inside it, they are very resource efficient so even with the 6GB of RAM my server has everything works pretty well
 - Linux (and some random libraries): Operating system for the server
 - Lua: for a very small script I made.
 
@@ -40,7 +40,7 @@ Proxmox is a virtualization tool I use to run my home server in, and I generally
 
 
 ---
-## Setup Process
+# Setup Process
 
 ## 1. Proxmox Configuration
 
