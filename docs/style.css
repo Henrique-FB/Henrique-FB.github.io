@@ -12,6 +12,12 @@
     padding: 0;
   }
   
+  .navbar li {
+    display: inline;
+    color: #ecf0f1; 
+  }
+
+
   .navbar .nav-link {
     color: #ecf0f1;
     text-decoration: none;
