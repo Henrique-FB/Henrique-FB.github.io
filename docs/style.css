@@ -6,6 +6,27 @@
   --text-light: #f3f4f6;
 }
 
+@keyframes slideInSidebar {
+  0% {
+    width: 150px;
+    opacity: 1;
+  }
+  100% {
+    width:60px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutTitle {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -35,6 +56,7 @@ body {
   transition: width 0.3s ease;
   overflow: hidden;
   position: relative;
+  animation: slideInSidebar 1s ease;
 }
 
 .sidebar:hover {
@@ -44,12 +66,12 @@ body {
 }
 
 /* Sidebar name behavior */
+
 .sidebar h1 {
   font-size: 1.4rem;
   margin-bottom: 0.1rem;
   opacity: 0;
-  transition: opacity 0.5s ease;
-}
+  animation: fadeOutTitle ease-out 0.4s}
 
 .sidebar:hover h1 {
   opacity: 1;
