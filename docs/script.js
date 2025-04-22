@@ -1,6 +1,7 @@
 let visitCountElement = document.getElementById("visit-count");
 
 
+
 window.addEventListener('DOMContentLoaded', () => {
     fetch('https://x4dd0atk82.execute-api.us-east-1.amazonaws.com/addUserCount')
       .then(response => {
@@ -13,13 +14,20 @@ window.addEventListener('DOMContentLoaded', () => {
         .then(res => res.json())
         .then(data => {
           let visitCount = data.user_count;
-          document.getElementById("visit-count").textContent = visitCount;
+          document.getElementById("visit-count").textContent = visitCount+ " accesses";
         });
       })
       .catch(error => {
         console.error("Failed to call API:", error);
       });
-
-
-
   }, { once: true });
+
+
+
+function switchLanguage(lang) {
+    if (lang === 'en') {
+      window.location.href = 'index-en.html';
+    } else {
+      window.location.href = 'index.html';
+    }
+  }

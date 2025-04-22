@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Henrique Boldrin - CV</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="layout">
+    
+    <aside class="sidebar">
+      <h1>Henry</h1>
+      <div id="visit-count" class="visit-count">Loading visits...</div>
+      <nav>
+        <ul>
+          <li><a href="index-en.html" class="active">CV</a></li>
+          <li><a href="projects.html">Projects</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content">
+
+      <div class="top-container">
+        <header class="profile-header">
+          <img src="assets/Henrique_Boldrin.jpg" alt="Henrique Boldrin" class="profile-pic" />
+          <div class="profile-info">
+            <h1>Henry Boldrin</h1>
+            <p><b>Henrique Farinaccio Boldrin</b></p>
+            <p>
+              <a href="mailto:henriquefboldrin@gmail.com">henriquefboldrin@gmail.com</a> |
+              <a href="https://github.com/Henrique-FB" target="_blank">GitHub</a> |
+              +55 (19) 9 9660 8779
+            </p>
+            <div class="language-switcher">
+              <button onclick="switchLanguage('pt')" class="lang-btn">🇧🇷 PT</button>
+              <button onclick="switchLanguage('en')" class="lang-btn">🇬🇧 EN</button>
+            </div>
+          </div>
+        </header>
+
+        <section class="side-by-side">
+          <div class="block">
+            <h2>Soft Skills</h2>
+            <div class="tags">
+              <span class="tag">Teamwork</span>
+              <span class="tag">Active Listening</span>
+            </div>
+          </div>
+          <div class="block">
+            <h2>Hobbies</h2>
+            <div class="tags">
+              <span class="tag">Cycling</span>
+              <span class="tag">Reading</span>
+              <span class="tag">TTRPGs</span>
+              <span class="tag">Self-Hosting</span>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section>
+        <h2>Summary & Goals</h2>
+        <p>Developer, designer, passionate about automation, data manipulation and analysis.</p>
+        <p>Has worked on multiple personal and collaborative projects and looks forward to learning from future challenges and his peers’ experience.</p>
+      </section>
+
+      <section>
+        <h2>Technical Skills</h2>
+        <ul>
+          <li><strong>Tools:</strong> Docker, Apache Airflow, Git, Linux CLI, Proxmox.</li>
+          <li><strong>Cloud:</strong> Oracle Cloud Infrastructure (OCI), Amazon Web Services (AWS), Serverless Framework.</li>
+          <li><strong>Pogramming Languages:</strong> Python (pandas, BS4, numpy, scikit-learn, matplotlib, Flask), SQL (Postgres), Typescript.</li>
+          <li><strong>Concepts & Techniques:</strong> REST APIs, Web Scraping, ETL, Web Development (JS, HTML, CSS).</li>
+          <li><strong>Languages:</strong> Portuguese (fluent), English (fluent)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Experience</h2>
+        <h3>ChessPuzzleHub</h3>
+        <p>Co-creator and developer of the website Chess Puzzle Hub, a large-scale chess puzzle search engine.<br>
+          Worked with Angular for front-end features and Python/SQL to create and optimize internal API calls.</p>
+        <br>
+        <h3>Home-Lab</h3>
+        <p>Out of love for self-hosting technologies, gained experience using cheap and old machines to manage personal software and data in a private server.<br>
+          Built a private media server using Plex, multiple game servers using Docker to manage various software (Linux GSM, DFPlex, ROMM), and separate Apache Airflow instances to automate personal projects.<br>
+          Also uses free cloud computing resources from AWS and Oracle to host more public-facing projects.</p>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <p><strong>UTFPR (2019 - Present)</strong><br />
+        Currently finishing a Bachelor’s degree in Computer Science, working on a graduation thesis focused on predicting returns from Real Estate Investment Trusts.</p>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

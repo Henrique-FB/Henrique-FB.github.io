@@ -8,77 +8,109 @@
 </head>
 <body>
 
-    <nav class="navbar">
-        <ul>
-          <li><a href="index.html" class="nav-link">CV</a></li>
-          <li><a href="projects.html" class="nav-link">Projetos</a></li>
-          <li>Número de acessos: <span id="visit-count"> </span></li>
 
+
+  <div class="layout">
+    
+    <aside class="sidebar">
+      <h1>Henry</h1>
+      <div id="visit-count" class="visit-count">Carregando visitas...</div>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">CV</a></li>
+          <li><a href="projects.html">Projetos</a></li>
         </ul>
       </nav>
+      
+    </aside>
 
 
-  <div class="container">
-    <header>
-      <h1>Henrique Boldrin</h1>
-      <p>
-        +55 (19) 9 9660 8779 |
-        <a href="mailto:henriquefboldrin@gmail.com">henriquefboldrin@gmail.com</a> |
-        <a href="https://github.com/Henrique-FB" target="_blank">GitHub</a> |
-        Ponta Grossa PR - 84043450
-      </p>
-    </header>
+    
+    <main class="content">
 
-    <section>
-      <h2>Observações e Objetivos</h2>
-      <p>23 anos, adora aprender sobre tudo que tenha a ver com automatização, análise e manipulação de dados.</p>
-      <p>Já trabalhou em múltiplos projetos pessoais e está animado para aprender muito com futuros desafios e com a experiência de seus colegas.</p>
-    </section>
 
-    <section>
-      <h2>Soft Skills</h2>
-      <ul>
-        <li>Trabalho em Equipe</li>
-        <li>Escuta Ativa</li>
-      </ul>
-    </section>
+      <div class="top-container">
+      <header class="profile-header">
+        <img src="assets/Henrique_Boldrin.jpg" alt="Henrique Boldrin" class="profile-pic" />
+        <div class="profile-info">
+          <h1>Henrique Farinaccio Boldrin</h1>
+          <p>
+            <a href="mailto:henriquefboldrin@gmail.com">henriquefboldrin@gmail.com</a> |
+            <a href="https://github.com/Henrique-FB" target="_blank">GitHub</a> |
+            +55 (19) 9 9660 8779
+          </p>
+          <div class="language-switcher">
+            <button onclick="switchLanguage('pt')" class="lang-btn">🇧🇷 PT</button>
+            <button onclick="switchLanguage('en')" class="lang-btn">🇬🇧 EN</button>
+          </div>
+      
+        </div>
+        
+      </header>
+      
+      <section class="side-by-side">
+        <div class="block">
+          <h2>Soft Skills</h2>
+          <div class="tags">
+            <span class="tag">Trabalho em Equipe</span>
+            <span class="tag">Escuta Ativa</span>
+          </div>
+        </div>
+        <div class="block">
+          <h2>Hobbies</h2>
+          <div class="tags">
+            <span class="tag">Ciclismo</span>
+            <span class="tag">Leitura</span>
+            <span class="tag">TTRPGs</span>
+            <span class="tag">Self-Hosting</span>
+          </div>
+        </div>
+      </section>
+    </div>
+      
 
-    <section>
-      <h2>Hobbies</h2>
-      <ul>
-        <li>Ciclismo</li>
-        <li>Leitura</li>
-        <li>Estudar TTRPGs</li>
-        <li>Self-Hosting</li>
-      </ul>
-    </section>
 
-    <section>
-      <h2>Experiência</h2>
-      <h3>ChessPuzzleHub</h3>
-      <p>Co-criador e desenvolvedor do website Chess Puzzle Hub, um site de busca de quebra-cabeças de xadrez em larga escala. Trabalhou com Angular criando funcionalidades front-end e Python/SQL criando e otimizando chamadas de uma API interna.</p>
 
-      <h3>Home-Lab</h3>
-      <p>Obteve experiência em self-hosting com máquinas baratas/antigas para manejar software e dados pessoais. Criou um servidor de mídia com Plex, múltiplos servidores de jogos (Docker, Linux GSM, DFPlex, ROMM) e instâncias de Apache Airflow para automatizar projetos. Também utiliza AWS e Oracle Cloud para hospedagem pública.</p>
-    </section>
+      <section>
+        <h2>Observações e Objetivos</h2>
+        <p>Desenvolvedor, designer, apaixonado por automação, análise e manipulação dados.</p>
+        <p>Já trabalhou em múltiplos projetos pessoais e colaborativos e procura aprender muito com futuros desafios e com a experiência de seus colegas.</p>
+      </section>
 
-    <section>
-      <h2>Educação</h2>
-      <p><strong>UTFPR (2019 - Atual)</strong><br />
-        Bacharelado em Ciência da Computação, com TCC focado em predição de retorno de Fundos de Investimento Imobiliário.</p>
-    </section>
+      <section>
+        <h2>Skills Técnicas</h2>
+        <ul>
+          <li><strong>Ferramentas:</strong> Docker, Apache Airflow, Git, Linux CLI, Proxmox.</li>
+          <li><strong>Cloud:</strong> Oracle Cloud Infrastructu (OCI), Amazon Web Services (AWS), Serverless Framework.</li>
+          <li><strong>Linguagens:</strong> Python (pandas, BS4, numpy, scikit-learn, matplotlib, Flask), SQL (Postgres), Typescript.</li>
+          <li><strong>Conceitos e Técnicas:</strong> REST APIs, Web Scraping, ETL, Webdev (JS, HTML, CSS).</li>
+          <li><strong>Línguas:</strong> Português (fluente), Inglês (fluente)</li>
+        </ul>
+      </section>
 
-    <section>
-      <h2>Skills Técnicas</h2>
-      <ul>
-        <li><strong>Ferramentas:</strong> Docker (Compose), Apache Airflow, Git, Linux CLI, Proxmox</li>
-        <li><strong>Cloud:</strong> Oracle Cloud (OCI), AWS, Serverless Framework</li>
-        <li><strong>Linguagens:</strong> Python (pandas, BS4, numpy, scikit-learn, matplotlib, Flask), SQL (Postgre), Typescript</li>
-        <li><strong>Conceitos:</strong> REST APIs, Web Scraping, ETL, Webdev (JS, HTML, CSS)</li>
-        <li><strong>Línguas:</strong> Português (fluente), Inglês (fluente)</li>
-      </ul>
-    </section>
+      <section>
+        <h2>Experiência</h2>
+        <h3>ChessPuzzleHub</h3>
+        <p>Co-criador e desenvolvedor do website Chess Puzzle Hub, um site de busca de quebra-cabeças de xadrez em larga escala. <br>
+          Trabalhou com Angular criando funcionalidades front-end e Python/SQL criando e otimizando chamadas de uma API interna.</p>
+        <br>
+        <h3>Home-Lab</h3>
+        <p>Por gostar muito de tecnologias de self-hosting, obteve experiência em utilizar máquinas baratas e antigas para manejar software e dados pessoais em um servidor privado.<br>
+          Criou um servidor de mídia privado usando Plex, múltiplos servidores de jogos utilizando Docker para manter diferentes softwares (Linux GSM, DFPlex, ROMM), assim como diferentes instâncias de Apache Airlfow para automatizar projetos pessoais.<br>
+          Por mais, utiliza recursos de cloud computing gratuitos da AWS e Oracle para hostear projetos com cunho mais público.</p>
+      </section>
+
+      <section>
+        <h2>Educação</h2>
+        <p><strong>UTFPR (2019 - Atual)</strong><br />
+        Atualmente finalizando um Bacharelado em Ciência da Computação, produzindo trabalho de conclusão de curso voltado à área de predição de retorno monetário de Fundos de Investimento Imobiliário.</p>
+      </section>
+
+    </main>
+
+    
   </div>
-<script src="script.js"></script>
+
+  <script src="script.js"></script>
 </body>
 </html>
