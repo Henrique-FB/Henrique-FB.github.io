@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -12,8 +12,8 @@
       <h1>Henry</h1>
       <nav>
         <ul>
-          <li><a href="/index.html">CV</a></li>
-          <li><a href="/pages/projects.html">Projects</a></li>
+          <li><a href="{{ site.baseurl }}/index.html">CV</a></li>
+          <li><a href="{{ site.baseurl }}/pages/projects.html">Projects</a></li>
           <p class="active">{{ page.title }}</p>
         </ul>
       </nav>
