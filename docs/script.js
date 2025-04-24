@@ -26,8 +26,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 function switchLanguage(lang) {
     if (lang === 'en') {
-      window.location.href = 'index-en.html';
-    } else {
       window.location.href = 'index.html';
+    } else {
+      window.location.href = 'index-br.html';
     }
   }
