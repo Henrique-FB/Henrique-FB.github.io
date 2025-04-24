@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>DF Server</title>
-  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="/self-stuff/assets/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -12,8 +12,8 @@
       <h1>Henry</h1>
       <nav>
         <ul>
-          <li><a href="/index.html">CV</a></li>
-          <li><a href="/pages/projects.html">Projects</a></li>
+          <li><a href="/self-stuff/index.html">CV</a></li>
+          <li><a href="/self-stuff/pages/projects.html">Projects</a></li>
           <p class="active">DF Server</p>
         </ul>
       </nav>
@@ -67,7 +67,7 @@
 
 <h2 id="1-proxmox-configuration">1. Proxmox Configuration</h2>
 
-<p>[Here, detail the steps for setting up the Proxmox environment. Include information about creating a new virtual machine, allocating resources, and any specific Proxmox settings relevant to game server hosting.]</p>
+<p>~ I won’t be detailing all the steps to set up proxmox in here. Maybe in another project.</p>
 
 <hr />
 <h2 id="2-linux-installation">2. Linux Installation</h2>
@@ -146,7 +146,7 @@ If I had disabled sound beforehand I wouldn’t have known this problem had the 
 
 <p>either way, now with deactivated sound back on my LXC container, I booted up the server (running the dfhack file) and it worked like a charm.</p>
 
-<p><img src="https://github.com/Henrique-FB/self-stuff/blob/main/images/DFPlex%20Client.png" alt="DFPlex Client.png" /></p>
+<p><img src="../assets/images/DFPlex_Client.png" alt="DFPlex Client.png" /></p>
 
 <h3 id="33-in-summary">3.3📚 In Summary,</h3>
 <p>The steps I took on the server installation process were:</p>
@@ -190,7 +190,7 @@ Although I actually did want to use it (especially because I had done so on my w
 <p>The next thing I tried was ZeroTier. It is basically the same as Hamachi, with the slight difference that you log into your account and manage the servers using a web interface. 
 After having done that, all I needed to do was install ZeroTier on my LXC (find a <a href="https://www.reddit.com/r/Proxmox/comments/jctd6x/comment/ge9n5m1/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button">random dude</a> on reddit telling me that I needed to change one specific line of one specific proxmox config file), connect to my network, tell everyone else to connect to said network, accept all the connections and done deal. Server working completely flawlessly (except for all the flaws it had. Don’t worry I’ll get to them).</p>
 
-<p><img src="https://github.com/Henrique-FB/self-stuff/blob/main/images/ZeroTier%20Manager.png" alt="ZeroTier Manager.png" /></p>
+<p><img src="../assets/images/ZeroTier_Manager.png" alt="ZeroTier Manager.png" /></p>
 <h3 id="43-in-summary">4.3📚 In Summary,</h3>
 <p>The steps in the network configuration process were:</p>
 <ul>

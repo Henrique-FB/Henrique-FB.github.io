@@ -1,14 +1,6 @@
----
-layout: default
-title: DF Server
-permalink: /projects/df_server
----
-
-
-
 # Dwarf Fortress Server
 
-<p class="emphasized">If you are here just to have a quick sniff around my portfolio, I recommend only reading sections with this bookmark on the title 📚. They are more concise, to the point and have less creative writing mixed in. Likely what you are looking for.</p>
+**If you are here just to have a quick sniff around my portfolio, I recommend only reading sections with this bookmark on the title 📚. They are more concise, to the point and have less creative writing mixed in. Likely what you are looking for.**
 
 # Introduction
 
@@ -52,7 +44,7 @@ Proxmox is a virtualization tool I use to run my home server in, and I generally
 
 ## 1. Proxmox Configuration
 
-~ I won't be detailing all the steps to set up proxmox in here. Maybe in another project.
+[Here, detail the steps for setting up the Proxmox environment. Include information about creating a new virtual machine, allocating resources, and any specific Proxmox settings relevant to game server hosting.]
 
 ---
 ## 2. Linux Installation
@@ -131,7 +123,7 @@ If I had disabled sound beforehand I wouldn't have known this problem had the sl
 
 either way, now with deactivated sound back on my LXC container, I booted up the server (running the dfhack file) and it worked like a charm.
 
-![DFPlex Client.png](../assets/images/DFPlex_Client.png)
+![DFPlex Client.png](https://github.com/Henrique-FB/self-stuff/blob/main/images/DFPlex%20Client.png)
 
 
 ### 3.3📚 In Summary,
@@ -172,7 +164,7 @@ Apparently Tailscale only allows access from machines that are connected to your
 The next thing I tried was ZeroTier. It is basically the same as Hamachi, with the slight difference that you log into your account and manage the servers using a web interface. 
 After having done that, all I needed to do was install ZeroTier on my LXC (find a [random dude](https://www.reddit.com/r/Proxmox/comments/jctd6x/comment/ge9n5m1/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button) on reddit telling me that I needed to change one specific line of one specific proxmox config file), connect to my network, tell everyone else to connect to said network, accept all the connections and done deal. Server working completely flawlessly (except for all the flaws it had. Don't worry I'll get to them).
 
-![ZeroTier Manager.png](../assets/images/ZeroTier_Manager.png)
+![ZeroTier Manager.png](https://github.com/Henrique-FB/self-stuff/blob/main/images/ZeroTier%20Manager.png)
 ### 4.3📚 In Summary,
 The steps in the network configuration process were:
 - *Not* port forward (for security reasons)
