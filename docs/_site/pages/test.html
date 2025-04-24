@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Smooth Live Graph</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #f4f6fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #graph {
+      width: 90%;
+      max-width: 800px;
+      height: 400px;
+      background: white;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div id="graph"></div>
+
+  <script>
+    const maxPoints = 400;
+    const updateInterval = 500; // ms
+    const valueData = [];
+    const timeData = [];
+
+    let startTime = Date.now();
+    let baseValue = 50;
+    let lastDataTime = 0;
+
+    // Initialize with some data
+    for (let i = 0; i < maxPoints; i++) {
+      valueData.push(baseValue);
+      timeData.push(i);
+    }
+
+    Plotly.newPlot('graph', [{
+      x: timeData,
+      y: valueData,
+      mode: 'lines',
+      line: { color: '#3b82f6', width: 3 }
+    }], {
+      margin: { t: 30 },
+      xaxis: {
+        range: [0, maxPoints],
+        showgrid: false
+      },
+      yaxis: {
+        showgrid: true,
+        gridcolor: '#e5e7eb'
+      },
+      paper_bgcolor: 'white',
+      plot_bgcolor: 'white'
+    });
+
+    function addNewDataPoint() {
+  const noise = (Math.random() - 0.5) * 0.8;
+  baseValue += 0.1 + noise;
+
+  const now = (Date.now() - startTime) / 200; // exact time
+  valueData.push(baseValue.toFixed(2));
+  timeData.push(now); // was previously using "i" or tick count
+
+  if (timeData.length > maxPoints) {
+    timeData.shift();
+    valueData.shift();
+  }
+
+  Plotly.update('graph', {
+    x: [timeData],
+    y: [valueData]
+  });
+}
+
+
+    setInterval(addNewDataPoint, updateInterval);
+
+    function animate() {
+      const now = (Date.now() - startTime) / 500;
+      const start = now - maxPoints;
+      Plotly.relayout('graph', {
+        'xaxis.range': [start, now]
+      });
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+</body>
+</html>
