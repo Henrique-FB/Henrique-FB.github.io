@@ -1,7 +1,8 @@
 ---
-layout: default
+layout: project-page
 title: DF Server
 permalink: /projects/df_server
+project_date: 2024-12-09
 ---
 
 
