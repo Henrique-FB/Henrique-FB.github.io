@@ -18,23 +18,23 @@ Due to this, I decided to create a data pipeline that scrapes data from certain 
 
 
 ## 1. Exploring sources
-The first thing I like doing when working on an ETL project by myself, is exploring the different venues I have of obtaining data.
+The first thing I like doing when working on an ETL project by myself is exploring the different venues I have of obtaining data.
 
 In this case, after some research, there were a few to choose from:
-- lol.fandom.com - Web-Scraping
-- gol.gg - Web-Scraping
+- [Pro Play Fandom Wiki](https://lol.fandom.com) - Web-Scraping
+- [Games of Legends](https://gol.gg) - Web-Scraping
 - Github Projects for esports APIs - there were more than one, most of them, as far as I understand, not up to date
-- oracleelixir.com - Freely available data in form of csv
+- [Oracle's Elixir](https://oracleselixir.com) - Freely available data in form of csv
 
-<sub>*~Edit: In hindsight, I might have gotten a lot of leeway from searching up stuff on database websites like Kaggle. Luckily OracleElixir is likely still better than what I would have found on those.*</sub>
+<sub>*~Edit: In hindsight, I might have gotten a lot of leeway from searching up stuff on database websites like Kaggle. Luckily Oracle's Elixir is likely still better than what I would have found on those.*</sub>
 
 
-This demonstrates a bit why it is so important to search for good sources when working on ETL. I could have spent hours/days of work setting up a proper web scraper that would get me *some* information. OracleElixir has all that information open-to-use, for free, in the click of a button.
+This demonstrates a bit why it is so important to search for good sources when working on ETL. I could have spent hours/days of work setting up a proper web scraper that would get me *some* information. Oracle's Elixir has all that information open-to-use, for free, in the click of a button.
 
 
 ## 2. Exploring the Data
 
-It's nice to know the general structure of the data we are working with. Looking at it, running some basic exploratory analysis stuff, and reading documentation can really help with that. (OracleElixir has some pretty neat stuff for reference as well).
+It's nice to know the general structure of the data we are working with. Looking at it, running some basic exploratory analysis stuff, and reading documentation can really help with that. (Oracle's Elixir has some pretty neat stuff for reference as well).
 
 Just as an example of something you can notice while exploring the dataset, You'd imagine this .csv would have data for each game, including red/blue teams on each row. That is not the case. There is one row for each player in a game, and 2 extra rows for red/blue teams. Meaning, you have 12 rows per game (in other words, a lot of repeated information).
 
@@ -110,7 +110,7 @@ One thing to keep in mind is that I decided to make two different DBs for this s
 
 First of all, I want all of this to be free. No computer of mine running 24h/day doing cron jobs, no "using my machine to run postgresql database that I'll inevitably forget about and not leave enough disk space on and will eventually break down. . ." you get the idea.
 
-Second, OracleElixir's database has a lot of repeated stuff. Thats not a problem for them. It's not a gigantic amount of data, the repeatedness isn't completely useless (e.g. I can easily search for "Chovy's games" and find how well his entire team was doing without having to also query the game itself). For us though, it is annoying. Because we want a clean database with very specific goals, that will make it much easier to query later (and we are *a tiny little small bit* worried about disk space, as we'll use cloud to store stuff, and I'll *hopefully* leave this kiddo running for years after I forget it exists).
+Second, Oracle's Elixir's database has a lot of repeated stuff. Thats not a problem for them. It's not a gigantic amount of data, the repeatedness isn't completely useless (e.g. I can easily search for "Chovy's games" and find how well his entire team was doing without having to also query the game itself). For us though, it is annoying. Because we want a clean database with very specific goals, that will make it much easier to query later (and we are *a tiny little small bit* worried about disk space, as we'll use cloud to store stuff, and I'll *hopefully* leave this kiddo running for years after I forget it exists).
 
 (Sidenote that when I say databases, I mostly mean DataFrames. Because that's *mostly* what we'll use in this. I very much wanted to make a relational DB, but that means spending money to have some kind of SQL Server going [or using DynamoDB free tier, which isn't a good idea for analysis like this], so in-memory DataFrames it is!)
 
@@ -194,7 +194,7 @@ Okay, so, after all that, let's recap.
 We are:
 
 #### Data Processing
-- Using Python to download info from OracleElixir
+- Using Python to download info from Oracle's Elixir
 - Using Pandas (still Python) to analyze said data
 - Creating a small "highlights" dictionary with interesting analytical info from the data we downloaded
 - Using a .md file to inject that analytical data into

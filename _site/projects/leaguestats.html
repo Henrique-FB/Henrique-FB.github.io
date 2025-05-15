@@ -55,23 +55,23 @@
 <p><sub><em>~Edit: This is not an accurate description of this project any longer. I’m going to leave it here because I think it’s interesting to see how the project changes and grows as ideas sprout and goals shift later in the project’s lifecycle.</em></sub></p>
 
 <h2 id="1-exploring-sources">1. Exploring sources</h2>
-<p>The first thing I like doing when working on an ETL project by myself, is exploring the different venues I have of obtaining data.</p>
+<p>The first thing I like doing when working on an ETL project by myself is exploring the different venues I have of obtaining data.</p>
 
 <p>In this case, after some research, there were a few to choose from:</p>
 <ul>
-  <li>lol.fandom.com - Web-Scraping</li>
-  <li>gol.gg - Web-Scraping</li>
+  <li><a href="https://lol.fandom.com">Pro Play Fandom Wiki</a> - Web-Scraping</li>
+  <li><a href="https://gol.gg">Games of Legends</a> - Web-Scraping</li>
   <li>Github Projects for esports APIs - there were more than one, most of them, as far as I understand, not up to date</li>
-  <li>oracleelixir.com - Freely available data in form of csv</li>
+  <li><a href="https://oracleselixir.com">Oracle’s Elixir</a> - Freely available data in form of csv</li>
 </ul>
 
-<p><sub><em>~Edit: In hindsight, I might have gotten a lot of leeway from searching up stuff on database websites like Kaggle. Luckily OracleElixir is likely still better than what I would have found on those.</em></sub></p>
+<p><sub><em>~Edit: In hindsight, I might have gotten a lot of leeway from searching up stuff on database websites like Kaggle. Luckily Oracle’s Elixir is likely still better than what I would have found on those.</em></sub></p>
 
-<p>This demonstrates a bit why it is so important to search for good sources when working on ETL. I could have spent hours/days of work setting up a proper web scraper that would get me <em>some</em> information. OracleElixir has all that information open-to-use, for free, in the click of a button.</p>
+<p>This demonstrates a bit why it is so important to search for good sources when working on ETL. I could have spent hours/days of work setting up a proper web scraper that would get me <em>some</em> information. Oracle’s Elixir has all that information open-to-use, for free, in the click of a button.</p>
 
 <h2 id="2-exploring-the-data">2. Exploring the Data</h2>
 
-<p>It’s nice to know the general structure of the data we are working with. Looking at it, running some basic exploratory analysis stuff, and reading documentation can really help with that. (OracleElixir has some pretty neat stuff for reference as well).</p>
+<p>It’s nice to know the general structure of the data we are working with. Looking at it, running some basic exploratory analysis stuff, and reading documentation can really help with that. (Oracle’s Elixir has some pretty neat stuff for reference as well).</p>
 
 <p>Just as an example of something you can notice while exploring the dataset, You’d imagine this .csv would have data for each game, including red/blue teams on each row. That is not the case. There is one row for each player in a game, and 2 extra rows for red/blue teams. Meaning, you have 12 rows per game (in other words, a lot of repeated information).</p>
 
@@ -148,7 +148,7 @@
 
 <p>First of all, I want all of this to be free. No computer of mine running 24h/day doing cron jobs, no “using my machine to run postgresql database that I’ll inevitably forget about and not leave enough disk space on and will eventually break down. . .” you get the idea.</p>
 
-<p>Second, OracleElixir’s database has a lot of repeated stuff. Thats not a problem for them. It’s not a gigantic amount of data, the repeatedness isn’t completely useless (e.g. I can easily search for “Chovy’s games” and find how well his entire team was doing without having to also query the game itself). For us though, it is annoying. Because we want a clean database with very specific goals, that will make it much easier to query later (and we are <em>a tiny little small bit</em> worried about disk space, as we’ll use cloud to store stuff, and I’ll <em>hopefully</em> leave this kiddo running for years after I forget it exists).</p>
+<p>Second, Oracle’s Elixir’s database has a lot of repeated stuff. Thats not a problem for them. It’s not a gigantic amount of data, the repeatedness isn’t completely useless (e.g. I can easily search for “Chovy’s games” and find how well his entire team was doing without having to also query the game itself). For us though, it is annoying. Because we want a clean database with very specific goals, that will make it much easier to query later (and we are <em>a tiny little small bit</em> worried about disk space, as we’ll use cloud to store stuff, and I’ll <em>hopefully</em> leave this kiddo running for years after I forget it exists).</p>
 
 <p>(Sidenote that when I say databases, I mostly mean DataFrames. Because that’s <em>mostly</em> what we’ll use in this. I very much wanted to make a relational DB, but that means spending money to have some kind of SQL Server going [or using DynamoDB free tier, which isn’t a good idea for analysis like this], so in-memory DataFrames it is!)</p>
 
@@ -243,7 +243,7 @@
 
 <h4 id="data-processing">Data Processing</h4>
 <ul>
-  <li>Using Python to download info from OracleElixir</li>
+  <li>Using Python to download info from Oracle’s Elixir</li>
   <li>Using Pandas (still Python) to analyze said data</li>
   <li>Creating a small “highlights” dictionary with interesting analytical info from the data we downloaded</li>
   <li>Using a .md file to inject that analytical data into</li>
