@@ -1,0 +1,106 @@
+.sidebar {
+  width: 100px;
+  position: relative;
+  background-color: var(--sidebar-bg);
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  padding: 1rem 0.5rem;
+}
+
+.sidebar:hover {
+  width: 240px;
+  padding-left: 1rem;
+}
+
+.sidebar nav h1 {
+  position: sticky;
+  display: flex;
+  font-size: 1.4rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar:hover nav h1 {
+  opacity: 1;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  position: fixed;
+  padding-left: 0;
+}
+
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  color: var(--text-light);
+  text-decoration: none;
+  padding: 0rem 0.75rem;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background-color: var(--sidebar-hover-bg);
+  color: var(--accent);
+}
+
+.sidebar nav .icon {
+  position: sticky;
+  width: 30px;
+  height: 30px;
+  stroke: var(--text-light);
+  transition: stroke 0.2s ease;
+  flex-shrink: 0;
+}
+
+.sidebar nav a:hover .icon,
+.sidebar nav a.active .icon {
+  stroke: var(--accent);
+}
+
+.sidebar nav .label {
+  margin-left: 2rem;
+  width: 100%;
+  position: sticky;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar nav li {
+  position: relative;
+  padding-top: 1rem;
+}
+
+.sidebar:hover nav .label {
+  opacity: 1;
+}
+
+.sidebar-separator {
+  position: relative;
+  width: 50%; /* small width when collapsed */
+  border: none;
+  border-top: 1px solid var(--separator-color);
+  opacity: 0.2;
+  transition: width 0.3s ease;
+  margin-left: 0.4rem;
+}
+
+
+.sidebar:hover .sidebar-separator{
+  padding-right: 1rem;
+  width: 100%; /* small width when collapsed */
+}
+
+
+  .sidebar:hover .visit-count {
+    opacity: 1;
+  }
+  
+
