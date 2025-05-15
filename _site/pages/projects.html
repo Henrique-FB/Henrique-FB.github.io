@@ -5,19 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projects - Henrique Boldrin</title>
   <link rel="stylesheet" href="../assets/styles/projects-style.css" />
+  <link rel="stylesheet" href="../assets/styles/sidebar-style.css" />
 </head>
 <body>
   <div class="layout">
     <aside class="sidebar">
-      <h1>Henry</h1>
-      <nav>
-        <div id="visit-count" class="visit-count">Loading visits...</div>
-        <ul>
-          <li><a href="../index.html">CV</a></li>
-          <li><a href="projects.html" class="active">Projects</a></li>
-        </ul>
-      </nav>
-    </aside>
+            <nav>
+        
+        <h1>Henry</h1>
+    <ul>
+      <li>
+        <a href="../index.html">
+          <!-- Example icon: document-text -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+          </svg>
+          <span class="label">CV</span>
+        </a>
+      </li>
+
+      <li>
+          <hr class="sidebar-separator" />
+    </li>
+
+      <li>
+        <a href="../pages/projects.html">
+          <!-- Example icon: folder -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 0 0-1.883 2.542l.857 6a2.25 2.25 0 0 0 2.227 1.932H19.05a2.25 2.25 0 0 0 2.227-1.932l.857-6a2.25 2.25 0 0 0-1.883-2.542m-16.5 0V6A2.25 2.25 0 0 1 6 3.75h3.879a1.5 1.5 0 0 1 1.06.44l2.122 2.12a1.5 1.5 0 0 0 1.06.44H18A2.25 2.25 0 0 1 20.25 9v.776" />
+          </svg>
+          <span class="label">Projetos</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+      </aside>
 
     <main class="content">
       <h2 class="page-title">My Projects</h2>
@@ -34,6 +57,15 @@
 
 
         
+          <div class="project-card ">
+            <h3>League Pro ETL - From Scratch to Automated Storytelling</h3>
+            <p>Thoughts behind entire extraction, analysis and visualization process on League of Legends Pro Play data.<br><br>From scraping the data to setting up Reddit posts using Python and AWS.</p>
+      
+            
+              <a href="/self-stuff/projects/leaguestats" target="_self" class="btn-accent">View Project</a>
+            
+          </div>
+      
           <div class="project-card ">
             <h3>Dwarf Fortress Server Tutorial</h3>
             <p>A tutorial explaining how to set up a Dwarf Fortress multiplayer server utilizing DFHack and DFPlex. <br><br> This project is currently under development. More details coming soon.</p>
