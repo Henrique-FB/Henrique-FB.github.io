@@ -14,6 +14,7 @@ image: /assets/images/DFPlex_Client.png
 
 <p class="emphasized">If you are here just to have a quick sniff around my portfolio, I recommend only reading sections with this bookmark on the title 📚. They are more concise, to the point and have less creative writing mixed in. Likely what you are looking for.</p>
 
+
 # Introduction
 
 So, after setting up a Proxmox virtual machine, learning how to use it and having some fun with setting up an ARR stack in it, I was stricken with a big craving to play [Dwarf Fortress](http://www.bay12games.com/dwarves/?) (or, DF in short).
@@ -32,6 +33,8 @@ This project demonstrates skills in
 - **Virtualization** (setting up the server on Proxmox, setting up the networks in ZeroTier, and showcasing the many ways I failed horribly before actually getting it to work)
 - **Programming** very small **Lua** scripts (with barely any knowledge of lua beforehand)
 - Usage of obscure software tricks and an ability to work with what I’ve got.
+
+<p class="emphasized"> ~Edit: I don't have time to edit this project right now, but almost a year later I came back to it and set a world-wide server for me and some friends to play in. If you trust me enough to believe this, the project technically also demonstrates skills in using OCI (Oracle Cloud Infrastructure, where I set the server up) and nginx (to manage access to my server).</p>
 
 
 ## 📚 Technologies Used
