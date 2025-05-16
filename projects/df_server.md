@@ -5,6 +5,7 @@ permalink: /projects/df_server
 description: A tutorial explaining how to set up a Dwarf Fortress multiplayer server utilizing DFHack and DFPlex. <br><br> This project is currently under development. More details coming soon.
 project_date: 2024-12-09
 priority: 3
+image: /assets/images/DFPlex_Client.png
 ---
 
 

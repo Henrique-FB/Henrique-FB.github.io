@@ -32,6 +32,10 @@
             <h3>{{ project.title }}</h3>
             <p>{{ project.description }}</p>
       
+            {% if project.image %}
+              <img src="{{ site.baseurl }}{{ project.image }}" alt="{{ project.title }} image" class="project-thumb">
+            {% endif %}
+
             {% if project.wip %}
               <span class="wip-tag">Work in Progress</span>
             {% else %}

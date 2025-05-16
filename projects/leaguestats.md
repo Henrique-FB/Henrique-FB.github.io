@@ -5,11 +5,15 @@ permalink: /projects/leaguestats
 description: Thoughts behind entire extraction, analysis and visualization process on League of Legends Pro Play data.<br><br>From scraping the data to setting up Reddit posts using Python and AWS.
 project_date: 2025-05-06
 priority: 1
+image: /assets/images/LeagueProStats Diagram.drawio.png
 ---
+
+
 
 
 <p class="emphasized">This project showcases knowledge in data scraping and analysis using Python and Pandas. It also demonstrates uses of AWS Lambda, AWS State Machine and AWS EventBridge.</p> 
 <p class="emphasized">To properly handle all these technologies I used Serverless Framework, a program built to streamline setting up serverless technology.</p>
+
 
 # League of Legends Esports Data Pipeline
 
@@ -18,6 +22,10 @@ In Esports, data on professional play is not only interesting, but can contain s
 Due to this, I decided to create a data pipeline that scrapes data from certain sources and automatically uploads said data into my own database, all for free, all automated, and with the goal of visualizing that data later on another software. (Most likely Grafana)
 
 <sub>*~Edit: This is not an accurate description of this project any longer. I'm going to leave it here because I think it's interesting to see how the project changes and grows as ideas sprout and goals shift later in the project's lifecycle.*</sub>
+
+
+![AWS Stack Diagram](<../assets/images/LeagueProStats Diagram.drawio.png>)
+<p class="emphasized">I wanted to leave this up here because I find it super cool. Diagram of the entire process. After reading the document hopefully you'll fully understand it.</p>
 
 
 

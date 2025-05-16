@@ -7,6 +7,8 @@
     --separator-color: #e5e7eb;
   }
   
+
+
   body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -24,7 +26,7 @@
   
   .content {
     flex-grow: 1;
-    padding: 2rem;
+    padding-left: 2rem;
     animation: fadeIn 0.6s ease;
   }
   
@@ -56,6 +58,8 @@
   
   .btn-accent {
     display: inline-block;
+    
+
     margin-top: 1rem;
     color: white;
     background-color: var(--accent);
@@ -95,6 +99,15 @@
     text-overflow: ellipsis;
   }
   
+  .project-thumb {
+  max-width: 400px;
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  margin-bottom: 0.5em;
+  border-radius: 8px;
+}
+
 
   @keyframes slideFadeIn {
     from {
