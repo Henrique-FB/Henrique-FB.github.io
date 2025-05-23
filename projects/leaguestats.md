@@ -254,3 +254,8 @@ I spent many hours trying to get pandas to work on AWS Lambda python functions.
 I later found out that there's a Lambda Layer (think of it as a function library inside of AWS) specifically for Pandas. *insert clown emoji*
 
 ---
+
+
+## Resources
+- [Oracle's Elixir downloads page](https://oracleselixir.com)
+
