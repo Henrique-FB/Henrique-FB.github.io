@@ -8,7 +8,7 @@ project_date: 2024-08-01
 
 # Stats: Pro-Play test | Month 4 | Top Lane
 
-Read more about this project • [GitHub](https://github.com/Henrique-FB) • [Hire Me](https://henrique-fb.github.io/self-stuff/)
+Read more about this project • [GitHub](https://github.com/Henrique-FB) • [Hire Me](https://henrique-fb.github.io/)
 
 *The stats in here are based on the data found in [OracleElixir](https://oracleselixir.com/)* 
 

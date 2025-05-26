@@ -13,7 +13,6 @@ image: /assets/images/accidents_map.png
 
 
 
-
 # US Accidents Dashboard
 
 A dashboard usually refers to group of contents that help you visualize certain aspects of one (or more) datasets. These can include anything from plain text to detailed maps.
