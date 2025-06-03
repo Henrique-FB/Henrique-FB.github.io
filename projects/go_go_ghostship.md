@@ -6,7 +6,6 @@ description: A written "guide" of all the little referances and cool things on t
 project_date: 2025-06-03
 wip: true
 priority: 2
-
 --- 
 
 # Rain World Animation Analysis: Go Go Ghost Ship
