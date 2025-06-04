@@ -126,7 +126,7 @@ This is not an extensive list of everything in the animation, just going through
 | Five Pebble's superstructure is now filled with rot | No Significant Harassment is creating the [Hunter](https://rainworld.miraheze.org/wiki/Hunter) |
 | Five Pebbles sad ;-; | |
 
-<p class="emphasized">Seven Red Suns has admited to having an atachment to Spearmaster, which would also explain why he is looking **at the map** worried, not just worried in general.</p>
+<p class="emphasized">Seven Red Suns has admited to having an atachment to Spearmaster, which would also explain why they are looking at the map worried, not just worried in general.</p>
 
 ### 1:58
 
