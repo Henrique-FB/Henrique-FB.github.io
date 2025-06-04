@@ -38,9 +38,9 @@ This is not an extensive list of everything in the animation, just going through
 
 |Iterator|Map|Overseer|Extra|
 |---|---|---|---|
-|[Looks to the Moon](https://rainworld.miraheze.org/wiki/Looks_to_the_Moon) |[insert map here] | Moon's Yellow Overseer | |
-| [Seven Red Suns](https://rainworld.miraheze.org/wiki/Seven_Red_Suns)|Underhang| SRS' Red Overseer | We can also see [Spearmaster](https://rainworld.miraheze.org/wiki/Spearmaster) next to them|
-|[No Significant Harassment](https://rainworld.miraheze.org/wiki/No_Significant_Harassment)| Five Pebble's Superstructure | Green Overseer* | |
+|[Looks to the Moon](https://rainworld.miraheze.org/wiki/Looks_to_the_Moon) | Garbage Wastes  | Moon's Yellow Overseer | |
+| [Seven Red Suns](https://rainworld.miraheze.org/wiki/Seven_Red_Suns)| Underhang | SRS' Red Overseer | We can also see [Spearmaster](https://rainworld.miraheze.org/wiki/Spearmaster) next to them|
+|[No Significant Harassment](https://rainworld.miraheze.org/wiki/No_Significant_Harassment)| Five Pebbles' Superstructure | Green Overseer* | |
 |[Five Pebbles](https://rainworld.miraheze.org/wiki/Five_Pebbles) |Five Pebbles' puppet's room. |  | |
 
 <p class="emphasized">We don't really know if Green Overseers are in fact from No Significant Harassment. Tho it is pretty likely to be the case.</p>
