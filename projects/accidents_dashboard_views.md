@@ -4,7 +4,6 @@ title: Grafana - Exploring Visualizations
 permalink: /projects/accidents_dashboard_views
 description: Zooming in on Grafana's views and taking a look at some different views I explored in my "US Accidents Dashboard" project.
 project_date: 2025-05-26
-wip: true
 priority: 1
 image: /assets/images/us_accidents_views.png
 ---
@@ -26,11 +25,11 @@ I'm gonna zoom in on some of the visualizations I made for my "US Accidents Dash
 <img src="../assets/images/us_accidents_view_1.png" style="width: 75%; margin: 0 auto; display: block;">
 
 
-Pretty simple stuff at first. I had a collumn representing the severity of each of my ~7 million accidents, and I wanted to see the severity distribution among the entire database.
+Pretty simple stuff at first. I had a column representing the severity of each of my ~7 million accidents, and I wanted to see the severity distribution among the entire database.
 
 My first instinct was to do `SELECT COUNT(*) FROM accidents GROUP BY severity`, which wouldn't be wrong, but I needed each severity group to have a different name (so I could then edit them separately on Grafana, change colors, labels and so on).
 
-I then though about `UNION`, but I ended up going with multiple `COUNT(*) FILTER (WHERE severity = x) AS yyy` as I noticed it'd be a quicker query.
+I then thought about `UNION`, but I ended up going with multiple `COUNT(*) FILTER (WHERE severity = x) AS yyy` as I noticed it'd be a quicker query.
 
 Still though, when my Grafana dashboard loaded, this visualization would take a huge time to load (as it'd be querying the entire database). So, I used something called Materialized Views.
 
@@ -44,7 +43,7 @@ This fixes our "huge loading time" problem (as the querying will be done only on
 
 ## General Design Pointers
 
-<p class="emphasized">I thought about talking on each Dashboard View's design specifically, but I noticed a lot of the design ideas repeat again and again for most visualizations I'm making. So, instead, I'm going to give you some general pointers about their visual desing.</p> 
+<p class="emphasized">I thought about talking about each Dashboard View's design specifically, but I noticed a lot of the design ideas repeat again and again for most visualizations I'm making. So, instead, I'm going to give you some general pointers about their visual design.</p> 
 
 
 
@@ -56,7 +55,7 @@ This fixes our "huge loading time" problem (as the querying will be done only on
 </figure>
 
 
-This might be more of a me thing, but I really dislike when I can see the bounding boxes of the data. There's obviously some use in it depending on your goal, but in general, I want the data to be seamless. Leave most of the data with transparent background, and make "non transparent background" a choice for when you want whatever you are showing to be "outside" of the dashboard's main thing.
+This might be more of a me thing, but I really dislike when I can see the bounding boxes of the data. There's obviously some use in it depending on your goal, but in general, I want the data to be seamless. Leave most of the data with a transparent background, and make "non transparent background" a choice for when you want whatever you are showing to be "outside" of the dashboard's main thing.
 
 
 ### 2. Minimalist
@@ -82,36 +81,49 @@ One example of this is using Grafana's built in "Time Range Picker" (and using i
 
 ## HTML (Text Visualization)
 
-![alt text](../assets/images/us_accidents_view_3.gif)
+![US Accidents View](../assets/images/us_accidents_view_3.gif)
 
 
 While I was messing around with good ways of showing off the title of the dashboard, I stumbled onto something pretty neat - I noticed that Grafana's Text Visualization accepts not only markdown, but also HTML.
 
 I've yet to explore a lot of how I could use this (I'm betting I could display data in some very fun ways with this), but for now I'm using some *herokuapp* stuff to display the title and the changing blue text you can see on the gif up there.
 
-One thing I love doing when messing around with HTML, especially when it comes to "making a certain part of my project a bit prettier", is just asking ChatGPT to write the HTML+CSS for me (and then re-write the text inside it). I had absolutely no clue that changing text thing existed until I asked ChatGPT to make me some "modern looking css for blablabla". I'm serious ChatGPT is the king of low-level CSS - and that, fortunately, is all we need.
+One thing I love doing when messing around with HTML, especially when it comes to "making a certain part of my project a bit prettier", is just asking ChatGPT to write the HTML+CSS for me (and then re-write the text inside it). I had absolutely no clue that this blue changing text thing existed until I asked ChatGPT to make me some "modern looking css for blablabla". I'm serious ChatGPT is the king of low-level CSS - and that, fortunately, is all we need.
 
 
 ## Time Range
 
-Time Range stuff
+Grafana has this neat little thing at the top of its dashboards called time picker:
+
+![Time Picker](../assets/images/time_picker.png)
+
+This is super useful for when you are handling time series data (pretty much what Grafana is made for). It lets the user pick the time-range they want to view.
+
+Now, one thing to keep in mind is this doesn't automatically change your queries to filter date/time. You need to do it yourself, making use of the time-picker variables grafana has built in: `${__from:date:iso}` and `${__to:date:iso}`. Your query should look something like this:
+
+```
+SELECT latitude, longitude, temperature, start_time AS "time" FROM accidents 
+WHERE start_time BETWEEN '${__from:date:iso}' AND '${__to:date:iso}'
+ORDER BY start_time ASC LIMIT 500 
+```
+
+Also, depending on what you are querying, do *not* forget to limit the amount of rows you'll get. Since the user controls what time range they want, they can try to query all of your database, which isn't always desirable.
 
 
 
 # Main Takeaways
 
 So, if you read this far (or if you skipped to the end 'cause yeah fair enough) the main stuff I'd take away from here is
-- Grafana actually *can* be used for Business Intelligence, and it might be good to implemant it in your work as such if you already use it for monitoring and data visualization.
+- Grafana actually *can* be used for Business Intelligence, and it might be good to implement it in your work as such if you already use it for monitoring and data visualization.
 - Use Materialized Views for stuff that doesn't need to be updated every minute/second/access
 - Use HTML+CSS on Text Visualizations (LLM models like ChatGPT or Copilot are pretty good at this.)
 - Don't be afraid to edit stuff case-by-case (especially colors, names, etc). Not everything needs to be ready straight from the database.
-- You can rely on the time range functionality that Grafana already provides if your data is a time series (or just *has dates and times* in it) to allow the end-user to display info about only specific timeframes.
+- You can rely on the time range functionality that Grafana already provides if your data is a time series to allow the end-user to display info about only specific timeframes.
 
 # Future
-I'm already doing a "next steps" section on my "US Accidents" post, so I'll leave you with some sutff that I want to explore in the future:
+I'm already doing a "next steps" section on my "US Accidents" post, so I'll just leave you with some stuff that I want to explore in the future:
 
 - I wonder how far you can push the HTML/CSS in the Text Visualization (like, does it break if I try to put an interactable widget iframe in there?).
-- I really need to explore the share and exporting options for visualizations. Especially because it would (I assume?) allow me to put some of those visualizations *in this website*, so you (invisible, probably non-existant reader) could mess around with them yourself.
-- I have read a lot about poeple using the Grafana variables to insane degrees. Somethign I could study later on.
-- 
+- I really need to explore the sharing and exporting options for visualizations. Especially because it would (I assume?) allow me to put some of those visualizations *in this website*, so you (invisible, probably non-existent reader) could mess around with them yourself.
+- I have read a lot about people using the Grafana variables to insane degrees. It's something I want to study more later.
 
