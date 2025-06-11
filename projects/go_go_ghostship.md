@@ -4,7 +4,7 @@ title: "Rain World Animation Analysis: Go Go Ghost Ship"
 permalink: /projects/go_go_ghostship
 description: A written "guide" of various little referances and cool things on the Rain World Animation Go Go Ghost Ship.
 project_date: 2025-06-03
-priority: 2
+priority: 5
 --- 
 
 # Rain World Animation Analysis: Go Go Ghost Ship

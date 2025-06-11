@@ -236,7 +236,7 @@ I told you I'd make an improvements section, here it is.
 1. This entire thing could be stored in an actual database. I'm not even necessarily saying .csv doesn't count as a database, but even if I were to still use .csv files to store all the data, I could have properly treated it all and structured everything in a way that would make it much simpler to access it all.
 (The best approach, in my view at least, would still be to make a relational database and have all the data there. This, sadly, would raise costs, either through cloud storage or running a local server)
 2. There is a lot of space for better visualization here. You could have entire dashboards with pie graphs and etc running fetching data daily and displaying the latest "highlights". Sadly, my goal of posting stuff on reddit really ties my hands in this aspect, as it only accepts markdown, and there's only so much you can display with markdown.
-
+3. I still haven't done this, but I want to automate these markdown posts into this website (uploading them to github and etc)
 
 ## Bonus Chapter - List of weird things that needed doing
 Here's a list of absurd hacks I ended up needing to use to make stuff work
