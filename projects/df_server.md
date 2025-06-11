@@ -34,7 +34,7 @@ This project demonstrates skills in
 - **Programming** very small **Lua** scripts (with barely any knowledge of lua beforehand)
 - Usage of obscure software tricks and an ability to work with what I’ve got.
 
-<p class="emphasized"> ~Edit: I don't have time to edit this project right now, but almost a year later I came back to it and set a world-wide server for me and some friends to play in. If you trust me enough to believe this, the project technically also demonstrates skills in using OCI (Oracle Cloud Infrastructure, where I set the server up) and nginx (to manage access to my server).</p>
+<p class="emphasized"> ~Edit: Half a year later I came back to this and set a world-wide server for me and some friends to play in. The project technically also demonstrates skills in using OCI (Oracle Cloud Infrastructure, where I set the server up) and nginx (to manage access to my server). More on this at the end of this page.</p>
 
 
 ## 📚 Technologies Used
@@ -303,18 +303,11 @@ The solutions I uncovered were:
 
 ---
 
-## 6. Future Improvements
-
-I am probably done working on this one for now, but in the future I'd definitely want to make some improvements, mainly:
-- Finding out a damn way to let the clients access the menu screen.
-- Running backup schedules on Proxmox to make sure nothing will happen to the server's saved game.
-- Possibly wrapping the whole client in *another* WebGUI client made by myself - that way it would be much safer to not use ZeroTier for connections(allowing me to port forward without that much worry), and would allow me to make some very useful addons to the whole client experience (like buttons to change the tilesets and other cool things)
-
-## Conclusion
+# Conclusion
 
 A much bigger project than I first imagined! 
 
-I knew it wasn't going to be as simple as my little test-trial on my windows machine, but it turned having a much steeper learning curve than I expected. 
+I knew it wasn't going to be as simple as my little test-trial on my windows machine, but it turned out having a much steeper learning curve than I expected. 
 
 I ended up learning a lot about Linux command line (as messing with the game files was more of a hassle then you'd imagine), a tiny bit more about Lua scripting (and how easy it was to get the "Pause game script" to work, even though it was extremely useless in the end) and ended up with a very easy to use Dwarf Fortress server I can play in whenever I feel like.
 
@@ -323,3 +316,44 @@ It gets stuff wrong a lot of the time, but the understanding it has over the gen
 
 Genuinely hope to get more of these projects going as time goes by. Having this now set up on my Proxmox server makes me genuinely happy, and hopefully you could learn something with me (or at least laugh at some of my *not-great* decisions along the way ^^ )
 
+
+## Future Improvements
+
+I am probably done working on this one for now, but in the future I'd definitely want to make some improvements, mainly:
+- Finding out a damn way to let the clients access the menu screen.
+- Running backup schedules on Proxmox to make sure nothing will happen to the server's saved game.
+- Possibly wrapping the whole client in *another* WebGUI client made by myself - that way it would be much safer to not use ZeroTier for connections(allowing me to port forward without that much worry), and would allow me to make some very useful addons to the whole client experience (like buttons to change the tilesets and other cool things)
+
+
+
+---
+
+
+
+<p class="emphasized"> 2025/06/11</p>
+
+# The Future
+
+Hey! This is me about 6 months after I finished this project. I wanted to write a bit more on the stuff that I did manage to do, so here I am.
+
+A bit disappointing, I did *not* get any work done on the stuff that I wrote down in the "Future Improvements" section. Gladly, tho, I did some fun stuff to compensate.
+
+Over these 6 months I learned a lot about cloud computing. Mostly AWS, Serverless, Lambda Functions and etc. None of those things are really that useful for this project, *but* I also came into contact with OCI, and that is a bit of a game changer. I wanted to make a globally-available, remote server for my DFPlex, and this kick-started my multi-day attempts at getting this to work.
+
+OCI, or, Oracle Cloud Infrastructure, is a cloud computing solution that pretty much no one likes. They are (allegedly?) somewhat cutthroat, and to be fair there is little reason to make use of them over something like AWS.
+
+Except for a little detail, which is, they have a free tier that allows you to run a server in it. And that's what I did:
+
+- I created an OCI account, and spent about 6 hours trying to get access to a compute instance (a remote server, essentially) and failed miserably. They, understandably, do not like free accounts.
+- I gave up on trying to get the free tier with a free tier account, and upgraded my account to pay-as-you-go. This allowed me to still access the free tier stuff for free, but also gave me the advantage of being a payed account. Now with my (free) payed account privilages I got access to both a 1GB RAM x86-64 instance, and a 24GB RAM ARM64 instance.
+- I am very very smart, I analysed that 24 is indeed a higher number than 1, so I decided to make my DFPlex server using the 24GB RAM instance.
+- I then spent about 40 hours trying to set it up, before I actually got it working. I needed to make a bunch of changes to my previous process, and turns out, Dwarf Fortress isn't supported in ARM architecture, so I needed to emulate a x64 instance to get it running.
+
+<p class=emphasized>Now is the time you laugh at my misery.</p>
+
+- Turns out, emulating Dwarf Fortress on a computer that isn't very good (aside from having a lot of RAM, which DF barely uses) makes the game run worse than anything I've ever witnessed in my entire life.
+- After comming to terms with the fact that I had spent 40 hours for literally nothing, I booted up the 1GB RAM instance, and got the server up and running there instead.
+
+Incredibly, it worked! Not very well mind you, I needed to create very small worlds and use very small maps while playing, but one could, in fact, play it! I even got some friends of mine from overseas to try it out. So, tahts the news. I have a remote server running my DFPlex instance.
+
+I also stopped using ZeroTier, and instead dove into nginx. Its just easier overall, I can simply ask my friend's IPs and allow them to access the server. The downside being they won't be able to access it from outside their home's IP. Its a downside I'm willing to put up with in favor of not having to manage a whole other virtual network program.
