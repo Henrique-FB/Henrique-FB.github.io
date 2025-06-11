@@ -33,7 +33,7 @@ I then thought about `UNION`, but I ended up going with multiple `COUNT(*) FILTE
 
 Still though, when my Grafana dashboard loaded, this visualization would take a huge time to load (as it'd be querying the entire database). So, I used something called Materialized Views.
 
-A Materialized Views basically:
+A Materialized View basically:
 - asks you to create a query
 - runs said query when it is created
 - saves the result of the query, and when you call it, it simply gives you that result. Instantly. 
