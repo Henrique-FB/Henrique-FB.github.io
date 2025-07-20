@@ -6,16 +6,17 @@ description: Thoughts behind entire extraction, analysis and visualization proce
 project_date: 2025-05-06
 priority: 1
 image: /assets/images/LeagueProStats Diagram.drawio.png
+tags: ["ETL", "games", "reddit", "data science", "AWS", "lambda"]
 ---
 
 
-
+# League of Legends Esports Data Pipeline
 
 <p class="emphasized">This project showcases knowledge in data scraping and analysis using Python and Pandas. It also demonstrates uses of AWS Lambda, AWS State Machine and AWS EventBridge.</p> 
 <p class="emphasized">To properly handle all these technologies I used Serverless Framework, a program built to streamline setting up serverless technology.</p>
 
 
-# League of Legends Esports Data Pipeline
+
 
 In Esports, data on professional play is not only interesting, but can contain significant information as to why certain teams win, lose, the patterns that arise in play, and so on.
 

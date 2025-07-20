@@ -2,24 +2,6 @@
 <html lang="en">
 <head>
 
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "rxcbrrvyir");
-  </script> 
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GPEW4VK3GX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-GPEW4VK3GX');
-  </script>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projects - Henrique Boldrin</title>
@@ -35,7 +17,16 @@
       
 
     <main class="content">
-      <h2 class="page-title">My Projects</h2>
+
+      <div class="project-header">
+        <h2 class="page-title">My Projects</h2>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search projects..." />
+      </div>
+
+
+
+    {% include tags.html %}
+
       <div class="project-grid">
         
         {% assign all_projects = site.pages | where_exp: "item", "item.path contains 'projects/'" %}
@@ -49,7 +40,8 @@
 
 
         {% for project in sorted_projects %}
-          <div class="project-card {% if project.wip %}wip{% endif %}">
+          <div class="project-card {% if project.wip %}wip{% endif %}"
+              data-tags="{{ project.tags | join: ',' | downcase }}">
             <h3>{{ project.title }}</h3>
             <p>{{ project.description }}</p>
       
@@ -60,7 +52,8 @@
             {% if project.wip %}
               <span class="wip-tag">Work in Progress</span>
             {% else %}
-              <a href="{{ site.baseurl }}{{ project.url }}" target="_self" class="btn-accent">View Project</a>
+              <a href="{{ site.baseurl }}{{ project.url }}" target="_self" class="btn-accent">View Project</a>             
+              <div class="read-time">{{project.content | reading_time}} read</div>
             {% endif %}
           </div>
       {% endfor %}
@@ -72,6 +65,8 @@
   </div>
 
   <script src="../script.js"></script>
+  <script src="../search.js"></script>
+
 
 </body>
 </html>

@@ -6,6 +6,7 @@ description: Tabletop Roleplaying Game about medieval fantasy wizards and compan
 project_date: 2025-01-01
 wip: true
 priority: 5
+tags: ["TTRPG"]
 ---
 
 This page is still in development.

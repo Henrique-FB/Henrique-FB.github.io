@@ -7,6 +7,7 @@ project_date: 2024-08-01
 wip: true
 priority: 1
 image: /assets/images/ChessPuzzleHub.png
+tags: ["games", "chess", "ETL", "frontend"]
 ---
 
 This page is still in development.

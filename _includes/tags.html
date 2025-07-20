@@ -1,0 +1,57 @@
+    {% assign all_projects = site.pages | where_exp: "item", "item.path contains 'projects/'" %}
+
+    {% assign tag_counts = "" | split: "" %}
+
+    <!-- Build a tag frequency string list like: tag::3 -->
+    {% assign all_tags_flat = "" | split: "" %}
+    {% for project in all_projects %}
+      {% if project.tags %}
+        {% assign all_tags_flat = all_tags_flat | concat: project.tags %}
+      {% endif %}
+    {% endfor %}
+
+    {% assign unique_tags = all_tags_flat | uniq %}
+
+    <!-- For each unique tag, count how many times it appears -->
+    {% assign tag_count_pairs = "" | split: "" %}
+    {% for tag in unique_tags %}
+      {% assign count = 0 %}
+      {% for t in all_tags_flat %}
+        {% if t == tag %}
+          {% assign count = count | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+      {% assign pair = tag | append: "::" | append: count %}
+      {% assign tag_count_pairs = tag_count_pairs | push: pair %}
+    {% endfor %}
+
+    <!-- Sort the pairs descending by count -->
+    {% assign sorted_tag_pairs = tag_count_pairs | sort_natural | reverse %}
+
+<div class="all-tags-wrapper">
+    <div id="all-tags" class="all-tags collapsed">
+      {% for pair in sorted_tag_pairs %}
+        {% assign tag = pair | split: "::" | first %}
+        {% assign count = pair | split: "::" | last %}
+        <span class="tag" data-tag="{{ tag | downcase }}">
+          {{ tag }} ({{ count }})
+        </span>
+      {% endfor %}
+    </div>
+<button class="toggle-tags-btn" onclick="toggleTags()" aria-label="Toggle tags">
+  <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+    <path d="M6 9l6 6 6-6" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+</div>
+
+<script>
+
+  function toggleTags() {
+    const tags = document.getElementById('all-tags');
+    const button = document.querySelector('.toggle-tags-btn');
+    const isExpanded = tags.classList.toggle('expanded');
+    tags.classList.toggle('collapsed', !isExpanded);
+    button.classList.toggle('expanded', isExpanded);
+  }
+</script>

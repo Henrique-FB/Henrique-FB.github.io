@@ -6,6 +6,8 @@ description: A tutorial explaining how to set up a Dwarf Fortress multiplayer se
 project_date: 2024-12-09
 priority: 3
 image: /assets/images/DFPlex_Client.png
+tags: ["games", "server"]
+
 ---
 
 

@@ -7,6 +7,8 @@ project_date: 2025-05-20
 wip: true
 priority: 1
 image: /assets/images/accidents_map.png
+tags: ["data science", "grafana"]
+
 ---
 
 <p class="emphasized">This project showcases knowledge in Data Analysis and Engineering using PostgreSQL, as well as visualization using Grafana (and sometimes very high efficiency at being an idiot).</p> 

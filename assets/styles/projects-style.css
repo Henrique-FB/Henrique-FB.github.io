@@ -42,6 +42,8 @@
   }
   
   .project-card {
+      max-width: 500px;
+
     background-color: white;
     padding: 1.5rem;
     border-radius: 1rem;
@@ -108,6 +110,101 @@
   border-radius: 8px;
 }
 
+.read-time {
+  display: inline-block;
+  font-size: 0.875rem; /* ~14px */
+  color: #555;
+  background-color: #f5f5f5;
+  padding: 0.25em 0.6em;
+  border-radius: 999px; /* pill shape */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.4;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* allows wrapping on small screens */
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+
+.project-header .page-title {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.project-header .search-input {
+  max-width: 400px;
+  padding: 0.5em 1em;
+  font-size: 1rem;
+  margin: 1rem 0;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  display: block;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23888" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 2a8 8 0 015.292 13.708l5 5a1 1 0 01-1.414 1.414l-5-5A8 8 0 1110 2zm0 2a6 6 0 100 12 6 6 0 000-12z"/></svg>');
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  background-position: right 1em center;
+}
+
+.all-tags-wrapper {
+  position: relative;
+  display: flex;
+  width: 80%;
+}
+
+.all-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  user-select: none;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.all-tags .tag {
+  background-color: #e0e0e0;
+  color: #333;
+  padding: 0.3em 0.7em;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.all-tags.collapsed {
+  max-height: 2em; /* roughly 1 line depending on tag size */
+}
+
+.all-tags.expanded {
+  max-height: 1000px; /* large enough to show all */
+}
+
+.all-tags .tag:hover {
+  background-color: #ccc;
+}
+
+.toggle-tags-btn {
+  background: none;
+  border: none;
+  color: #555;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+  margin-bottom: 1rem;
+}
+.toggle-tags-btn svg {
+  transition: transform 0.3s;
+}
+
+.toggle-tags-btn.expanded svg {
+  transform: rotate(180deg);
+}
 
   @keyframes slideFadeIn {
     from {
@@ -128,3 +225,22 @@
       opacity: 1;
     }
   }
+
+
+@media (max-width: 600px) {
+  .project-card {
+    max-width: 80% !important; /* override fixed max-width */
+
+    margin-right: auto;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .project-grid {
+    grid-template-columns: 1fr !important; /* single column layout */
+    gap: 1rem;
+  }
+}
+  
+}

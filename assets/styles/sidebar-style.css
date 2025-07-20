@@ -104,3 +104,85 @@
   }
   
 
+@media (max-width: 768px) {
+    body, .content {
+    padding-top: 3.5rem; /* equal to navbar height */
+  }
+  /* Sidebar becomes top navbar */
+  .sidebar {
+    width: 100%;
+    position: fixed;      /* stay at top */
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0.5rem 1rem;
+    background-color: var(--sidebar-bg);
+    display: flex;
+    flex-direction: row;  /* horizontal */
+    align-items: center;
+    overflow: visible;    /* show all content */
+    z-index: 9999;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  /* Remove hover expand behavior on mobile */
+  .sidebar:hover {
+    width: 100%;
+    padding-left: 1rem;
+  }
+
+  /* nav inside sidebar becomes flex row */
+  .sidebar nav ul {
+    position: static;  /* no fixed position */
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    width: auto;
+    margin: 0;
+  }
+
+  /* nav list items in row */
+  .sidebar nav li {
+    padding: 0 0.75rem;
+  }
+
+  /* links align center vertically and horizontally */
+  .sidebar nav a {
+    padding: 0.5rem 0.5rem;
+    justify-content: center;
+  }
+
+  /* icon and label align horizontally */
+  .sidebar nav .icon {
+    position: static;
+    margin-right: 0.3rem;
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Show labels fully on mobile */
+  .sidebar nav .label {
+    position: static;
+    opacity: 1 !important;
+    margin-left: 0;
+    display: inline-block;
+    font-size: 1rem;
+  }
+
+  /* Hide sidebar separator on mobile */
+  .sidebar-separator {
+    display: none;
+  }
+
+  /* Adjust visit count */
+  .visit-count {
+    opacity: 1 !important;
+    font-size: 0.75rem;
+    margin-left: 0.5rem;
+  }
+  
+  /* Adjust project content padding to avoid overlap */
+  .content {
+    padding-top: 3.5rem; /* adjust to navbar height */
+  }
+}
