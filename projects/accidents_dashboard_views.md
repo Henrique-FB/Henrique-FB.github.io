@@ -7,6 +7,7 @@ project_date: 2025-05-26
 priority: 1
 image: /assets/images/us_accidents_views.png
 tags: ["grafana", "data science", "visualization"]
+category: dev
 ---
 
 <p class="emphasized">This project showcases experience in designing and organizing visualizations in Grafana dashboards. It also reflects an understanding of UX in data visualization and how to make complex data readable at a glance.</p> 

@@ -7,4 +7,5 @@ project_date: 2024-11-22
 wip: true
 priority: 2
 image: 
+category: dev
 --- 

@@ -1,27 +1,45 @@
+/* ── Lock the layout so only content scrolls, not the sidebar ── */
+.layout {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.content {
+  overflow-y: auto;
+}
+
+/* ── Sidebar (collapsed → expands on hover) ── */
 .sidebar {
-  width: 100px;
-  position: relative;
-  background-color: var(--sidebar-bg);
-  color: var(--text-light);
+  width: 64px;
+  background-color: #1f2937;
+  color: #f3f4f6;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   transition: width 0.3s ease;
   overflow: hidden;
-  padding: 1rem 0.5rem;
+  padding: 1rem 0;
+  position: relative;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  flex-shrink: 0;
+  height: 100vh;
 }
 
 .sidebar:hover {
-  width: 240px;
-  padding-left: 1rem;
+  width: 200px;
+}
+
+.sidebar nav {
+  width: 100%;
 }
 
 .sidebar nav h1 {
-  position: sticky;
-  display: flex;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
+  padding: 0.25rem 1rem 0.75rem;
   opacity: 0;
   transition: opacity 0.3s ease;
+  white-space: nowrap;
+  color: #f3f4f6;
 }
 
 .sidebar:hover nav h1 {
@@ -30,52 +48,49 @@
 
 .sidebar nav ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  width: 100px;
-  position: fixed;
-  padding-left: 0;
+  gap: 0.15rem;
+  width: 100%;
+  position: sticky;
+  top: 1rem;
+}
+
+.sidebar nav li {
+  padding: 0;
 }
 
 .sidebar nav a {
   display: flex;
   align-items: center;
-  color: var(--text-light);
+  gap: 0.75rem;
+  color: #f3f4f6;
   text-decoration: none;
-  padding: 0rem 0.75rem;
+  padding: 0.6rem 1.1rem;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .sidebar nav a:hover,
 .sidebar nav a.active {
-  background-color: var(--sidebar-hover-bg);
-  color: var(--accent);
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #3b82f6;
 }
 
 .sidebar nav .icon {
-  position: sticky;
-  width: 30px;
-  height: 30px;
-  stroke: var(--text-light);
-  transition: stroke 0.2s ease;
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
   flex-shrink: 0;
 }
 
-.sidebar nav a:hover .icon,
-.sidebar nav a.active .icon {
-  stroke: var(--accent);
-}
-
 .sidebar nav .label {
-  margin-left: 2rem;
-  width: 100%;
-  position: sticky;
   opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.sidebar nav li {
-  position: relative;
-  padding-top: 1rem;
+  transition: opacity 0.25s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
 .sidebar:hover nav .label {
@@ -83,106 +98,104 @@
 }
 
 .sidebar-separator {
-  position: relative;
-  width: 50%; /* small width when collapsed */
   border: none;
-  border-top: 1px solid var(--separator-color);
-  opacity: 0.2;
-  transition: width 0.3s ease;
-  margin-left: 0.4rem;
+  border-top: 1px solid rgba(229, 231, 235, 0.12);
+  margin: 0.4rem 1rem;
 }
 
-
-.sidebar:hover .sidebar-separator{
-  padding-right: 1rem;
-  width: 100%; /* small width when collapsed */
+.visit-count {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  padding: 0.5rem 1.1rem 0;
 }
 
+.sidebar:hover .visit-count {
+  opacity: 1;
+}
 
-  .sidebar:hover .visit-count {
-    opacity: 1;
-  }
-  
-
+/* ── Mobile: sidebar becomes top navbar ── */
 @media (max-width: 768px) {
-    body, .content {
-    padding-top: 3.5rem; /* equal to navbar height */
+  body {
+    padding-top: 3.5rem;
   }
-  /* Sidebar becomes top navbar */
+
+  .layout {
+    height: auto;
+    overflow: visible;
+  }
+
+  .content {
+    overflow-y: visible;
+  }
+
   .sidebar {
     width: 100%;
-    position: fixed;      /* stay at top */
+    height: auto;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     padding: 0.5rem 1rem;
-    background-color: var(--sidebar-bg);
-    display: flex;
-    flex-direction: row;  /* horizontal */
+    flex-direction: row;
     align-items: center;
-    overflow: visible;    /* show all content */
+    overflow: visible;
     z-index: 9999;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
 
-  /* Remove hover expand behavior on mobile */
   .sidebar:hover {
     width: 100%;
     padding-left: 1rem;
   }
 
-  /* nav inside sidebar becomes flex row */
-  .sidebar nav ul {
-    position: static;  /* no fixed position */
-    display: flex;
-    flex-direction: row;
-    padding-left: 0;
+  .sidebar nav {
     width: auto;
+  }
+
+  .sidebar nav h1 {
+    display: none;
+  }
+
+  .sidebar nav ul {
+    position: static;
+    flex-direction: row;
+    gap: 0.25rem;
     margin: 0;
   }
 
-  /* nav list items in row */
   .sidebar nav li {
-    padding: 0 0.75rem;
+    padding: 0;
   }
 
-  /* links align center vertically and horizontally */
   .sidebar nav a {
-    padding: 0.5rem 0.5rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
     justify-content: center;
+    gap: 0.4rem;
   }
 
-  /* icon and label align horizontally */
   .sidebar nav .icon {
-    position: static;
-    margin-right: 0.3rem;
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
   }
 
-  /* Show labels fully on mobile */
   .sidebar nav .label {
-    position: static;
-    opacity: 1 !important;
-    margin-left: 0;
-    display: inline-block;
-    font-size: 1rem;
+    opacity: 1;
+    font-size: 0.85rem;
   }
 
-  /* Hide sidebar separator on mobile */
   .sidebar-separator {
     display: none;
   }
 
-  /* Adjust visit count */
   .visit-count {
-    opacity: 1 !important;
+    opacity: 1;
     font-size: 0.75rem;
-    margin-left: 0.5rem;
-  }
-  
-  /* Adjust project content padding to avoid overlap */
-  .content {
-    padding-top: 3.5rem; /* adjust to navbar height */
+    padding: 0 0.5rem;
   }
 }

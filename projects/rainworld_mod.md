@@ -6,6 +6,7 @@ description: A mod for the game Rain World <br><br>This project is currently und
 project_date: 2025-01-01
 wip: true
 priority: 3
+category: dev
 ---
 
 This page is still in development.

@@ -7,6 +7,7 @@ project_date: 2025-05-06
 priority: 1
 image: /assets/images/LeagueProStats Diagram.drawio.png
 tags: ["ETL", "games", "reddit", "data science", "AWS", "lambda"]
+category: dev
 ---
 
 

@@ -6,6 +6,7 @@ description: A written "guide" of various little referances and cool things on t
 project_date: 2025-06-03
 priority: 5
 tags: ["games", "analysis", "rain world"]
+category: writing
 
 --- 
 

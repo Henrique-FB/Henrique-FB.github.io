@@ -8,6 +8,7 @@ wip: true
 priority: 1
 image: /assets/images/accidents_map.png
 tags: ["data science", "grafana"]
+category: dev
 
 ---
 

@@ -7,6 +7,7 @@ project_date: 2024-12-09
 priority: 3
 image: /assets/images/DFPlex_Client.png
 tags: ["games", "server"]
+category: dev
 
 ---
 

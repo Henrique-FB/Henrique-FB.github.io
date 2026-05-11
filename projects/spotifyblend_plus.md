@@ -6,6 +6,7 @@ description: A program that creates spotify playlists based on you and your frie
 project_date: 2025-01-01
 wip: true
 priority: 2
+category: dev
 ---
 
 This page is still in development.

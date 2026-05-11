@@ -8,6 +8,7 @@ wip: true
 priority: 3
 image: /assets/images/media_server_diagram.png
 tags: ["DevOps", "homelab"]
+category: dev
 ---
 
 

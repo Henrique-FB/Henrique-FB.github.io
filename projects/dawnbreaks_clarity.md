@@ -7,6 +7,7 @@ project_date: 2025-01-01
 wip: true
 priority: 5
 tags: ["TTRPG"]
+category: writing
 ---
 
 This page is still in development.
