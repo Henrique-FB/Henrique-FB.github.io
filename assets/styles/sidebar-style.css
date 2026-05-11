@@ -1,18 +1,116 @@
+/* ── CSS Custom Properties (defined here; loaded on every page) ── */
+:root {
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-alt: #f1f5f9;
+  --sidebar-bg: #1e293b;
+  --sidebar-hover: rgba(255, 255, 255, 0.08);
+  --text: #1e293b;
+  --text-muted: #64748b;
+  --text-on-sidebar: #f1f5f9;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --border: #e2e8f0;
+  --tag-bg: #dbeafe;
+  --tag-text: #1d4ed8;
+  --card-overlay: rgba(15, 23, 42, 0.92);
+  --wip-color: #f59e0b;
+  --code-bg: #f1f5f9;
+  --blockquote-bg: #f1f5f9;
+  --table-bg: #f8fafc;
+  --table-head-bg: #e2e8f0;
+  --table-border: #d1d5db;
+  --table-hover: #e2e8f0;
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --surface-alt: #334155;
+  --sidebar-bg: #0a1120;
+  --sidebar-hover: rgba(255, 255, 255, 0.08);
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --text-on-sidebar: #f1f5f9;
+  --accent: #60a5fa;
+  --accent-hover: #3b82f6;
+  --border: #334155;
+  --tag-bg: rgba(96, 165, 250, 0.12);
+  --tag-text: #93c5fd;
+  --card-overlay: rgba(8, 12, 26, 0.94);
+  --wip-color: #f59e0b;
+  --code-bg: #1e293b;
+  --blockquote-bg: #1e293b;
+  --table-bg: #1e293b;
+  --table-head-bg: #334155;
+  --table-border: #475569;
+  --table-hover: #334155;
+}
+
+/* ── Global reset & base ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* ── Global scrollbar (Chrome/Safari) ── */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+/* ── Theme toggle icon rules (CSS handles this before JS loads to avoid flicker) ── */
+.theme-toggle .icon-sun { display: none; }
+.theme-toggle .icon-moon { display: block; }
+[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
 /* ── Lock the layout so only content scrolls, not the sidebar ── */
 .layout {
+  display: flex;
+  min-height: 100vh;
   height: 100vh;
   overflow: hidden;
 }
 
 .content {
+  flex: 1;
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
 }
 
 /* ── Sidebar (collapsed → expands on hover) ── */
 .sidebar {
   width: 64px;
-  background-color: #1f2937;
-  color: #f3f4f6;
+  background-color: var(--sidebar-bg);
+  color: var(--text-on-sidebar);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -39,7 +137,7 @@
   opacity: 0;
   transition: opacity 0.3s ease;
   white-space: nowrap;
-  color: #f3f4f6;
+  color: var(--text-on-sidebar);
 }
 
 .sidebar:hover nav h1 {
@@ -66,7 +164,7 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  color: #f3f4f6;
+  color: var(--text-on-sidebar);
   text-decoration: none;
   padding: 0.6rem 1.1rem;
   white-space: nowrap;
@@ -75,8 +173,8 @@
 
 .sidebar nav a:hover,
 .sidebar nav a.active {
-  background-color: rgba(255, 255, 255, 0.08);
-  color: #3b82f6;
+  background-color: var(--sidebar-hover);
+  color: var(--accent);
 }
 
 .sidebar nav .icon {
@@ -97,15 +195,56 @@
   opacity: 1;
 }
 
+/* ── Theme toggle button (styled like a nav link) ── */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-on-sidebar);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.6rem 1.1rem;
+  white-space: nowrap;
+  width: 100%;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: inherit;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--sidebar-hover);
+  color: var(--accent);
+}
+
+.theme-toggle .icon {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  flex-shrink: 0;
+}
+
+.theme-toggle .label {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.sidebar:hover .theme-toggle .label {
+  opacity: 1;
+}
+
+/* ── Separator ── */
 .sidebar-separator {
   border: none;
   border-top: 1px solid rgba(229, 231, 235, 0.12);
   margin: 0.4rem 1rem;
 }
 
+/* ── Visit counter ── */
 .visit-count {
   font-size: 0.8rem;
-  color: #9ca3af;
+  color: var(--text-muted);
   opacity: 0;
   transition: opacity 0.3s ease;
   white-space: nowrap;
@@ -191,6 +330,24 @@
 
   .sidebar-separator {
     display: none;
+  }
+
+  .theme-toggle {
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    justify-content: center;
+    gap: 0.4rem;
+    width: auto;
+  }
+
+  .theme-toggle .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .theme-toggle .label {
+    opacity: 1;
+    font-size: 0.85rem;
   }
 
   .visit-count {

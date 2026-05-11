@@ -6,6 +6,12 @@
   <title>Projects - Henrique Boldrin</title>
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/projects-style.css">
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/sidebar-style.css">
+  <script>
+  (function(){
+    var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+    document.documentElement.setAttribute('data-theme',t);
+  })();
+  </script>
 </head>
 <body>
   <div class="layout">
@@ -118,5 +124,6 @@
   </div>
 
   <script src="{{ site.baseurl }}/search.js"></script>
+  <script src="{{ site.baseurl }}/theme.js"></script>
 </body>
 </html>

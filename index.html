@@ -1,48 +1,27 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Henrique Boldrin - CV</title>
-  <link rel="stylesheet" href="assets/styles/CV-style.css" />
-
-
-
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/sidebar-style.css" />
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/CV-style.css" />
+  <script>
+  (function(){
+    var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+    document.documentElement.setAttribute('data-theme',t);
+  })();
+  </script>
 </head>
 <body>
 
   <div class="layout">
-    
+
     <aside class="sidebar">
-      <h1>Henry</h1>
+      {% include sidebar.html %}
       <div id="visit-count" class="visit-count">Loading visits...</div>
-<nav>
-    <ul>
-          <hr class="sidebar-separator" />
-      <li>
-        <a href="index.html" class="active">
-          <!-- Example icon: document-text -->
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-          </svg>
-          <span class="label">CV</span>
-        </a>
-      </li>
-        <hr class="sidebar-separator" />
-      <li>
-        <a href="pages/projects.html">
-          <!-- Example icon: folder -->
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 0 0-1.883 2.542l.857 6a2.25 2.25 0 0 0 2.227 1.932H19.05a2.25 2.25 0 0 0 2.227-1.932l.857-6a2.25 2.25 0 0 0-1.883-2.542m-16.5 0V6A2.25 2.25 0 0 1 6 3.75h3.879a1.5 1.5 0 0 1 1.06.44l2.122 2.12a1.5 1.5 0 0 0 1.06.44H18A2.25 2.25 0 0 1 20.25 9v.776" />
-          </svg>
-          <span class="label">Projects</span>
-        </a>
-      </li>
-              <hr class="sidebar-separator" />
-
-    </ul>
-  </nav>
-
     </aside>
 
     <main class="content">
@@ -97,7 +76,7 @@
             <strong>Programming Languages:</strong> Python · TypeScript · PHP · Bash<br>
             <strong>Frameworks & Libraries:</strong> Laravel · Flask · Angular · React · Pandas · Matplotlib · BeautifulSoup<br>
             <strong>Data & Automation:</strong> Apache Airflow · PostgreSQL · DynamoDB<br>
-            <strong>Infrastructure & DevOps:</strong> Amazon Web Services · Oracle Cloud Infrastructure · Docker · Linux CLI · Proxmox · Serverless Framework<br>      
+            <strong>Infrastructure & DevOps:</strong> Amazon Web Services · Oracle Cloud Infrastructure · Docker · Linux CLI · Proxmox · Serverless Framework<br>
             <strong>Languages:</strong> Portuguese (Fluent) · English (Fluent)<br>
       </section>
 
@@ -123,12 +102,13 @@
       <section>
         <h2>Education</h2>
         <p><strong>UTFPR (2026)</strong><br />
-        Currently finishing a Bachelor’s degree in Computer Science, working on a graduation thesis focused on predicting returns from Real Estate Investment Trusts.</p>
+        Currently finishing a Bachelor's degree in Computer Science, working on a graduation thesis focused on predicting returns from Real Estate Investment Trusts.</p>
       </section>
 
     </main>
   </div>
 
-<script src="script.js"></script>
+<script src="{{ site.baseurl }}/script.js"></script>
+<script src="{{ site.baseurl }}/theme.js"></script>
 </body>
 </html>
