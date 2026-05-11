@@ -7,6 +7,7 @@ project_date: 2025-06-03
 priority: 5
 tags: ["games", "analysis", "rain world"]
 category: writing
+image: "https://i.ytimg.com/vi/HCn5u95XOls/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAJyzGpZk-x0WKNYeqc-HQXGbFjIw"
 
 --- 
 
