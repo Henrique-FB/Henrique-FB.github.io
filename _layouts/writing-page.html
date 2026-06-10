@@ -27,7 +27,7 @@
           <div class="writing-article-meta">
             <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%B %-d, %Y" }}</time>
             {% if page.topic %}<span class="dot">·</span><span>{{ page.topic }}</span>{% endif %}
-            {% if content %}<span class="dot">·</span><span>{{ content | reading_time }}</span>{% endif %}
+            {% if content %}<span class="dot">·</span><span>{% include reading_time.html content=content %}</span>{% endif %}
           </div>
           <h1 class="writing-article-title">{{ page.title }}</h1>
           {% if page.excerpt %}<p class="writing-article-subtitle">{{ page.excerpt | strip_html }}</p>{% endif %}

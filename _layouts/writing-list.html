@@ -53,7 +53,7 @@
             <div class="feed-meta">
               <time datetime="{{ w.date | date: '%Y-%m-%d' }}">{{ w.date | date: "%b %-d, %Y" }}</time>
               {% if w.topic %}<span class="dot">·</span><span class="feed-topic">{{ w.topic }}</span>{% endif %}
-              {% if w.content %}<span class="dot">·</span><span class="feed-readtime">{{ w.content | reading_time }}</span>{% endif %}
+              {% if w.content %}<span class="dot">·</span><span class="feed-readtime">{% include reading_time.html content=w.content %}</span>{% endif %}
             </div>
             <h2 class="feed-title">
               <a href="{{ site.baseurl }}{{ w.url }}">{{ w.title }}</a>
