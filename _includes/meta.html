@@ -1,0 +1,24 @@
+<!-- Open Graph / social share meta tags. Used by Discord, Slack, Twitter, iMessage, etc. -->
+{% assign meta_title = page.title | default: site.title %}
+{% if page.description %}
+  {% assign meta_desc = page.description | strip_html | strip_newlines | truncate: 200 %}
+{% elsif page.excerpt %}
+  {% assign meta_desc = page.excerpt | strip_html | strip_newlines | truncate: 200 %}
+{% else %}
+  {% assign meta_desc = site.description %}
+{% endif %}
+{% assign meta_image = page.image | default: '/assets/Henrique_Boldrin.jpg' %}
+
+<meta name="description" content="{{ meta_desc }}">
+
+<meta property="og:type" content="{% if page.date or page.project_date %}article{% else %}website{% endif %}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{{ meta_title }}">
+<meta property="og:description" content="{{ meta_desc }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ meta_image | absolute_url }}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ meta_title }}">
+<meta name="twitter:description" content="{{ meta_desc }}">
+<meta name="twitter:image" content="{{ meta_image | absolute_url }}">

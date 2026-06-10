@@ -1,5 +1,5 @@
 ---
 layout: writing-list
-title: Writings
+title: Writing
 permalink: /pages/writings
 ---
