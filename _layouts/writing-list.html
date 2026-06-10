@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Writings - Henrique Boldrin</title>
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/sidebar-style.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles/writings-style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <script>
+  (function(){
+    var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+    document.documentElement.setAttribute('data-theme',t);
+  })();
+  </script>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      {% include sidebar.html %}
+    </aside>
+
+    <main class="content writings-content">
+      <header class="writings-header">
+        <h1 class="writings-title">Writing</h1>
+        <p class="writings-tagline">Notes on stuff I like.</p>
+      </header>
+
+      {% assign all_writings = site.pages | where_exp: "item", "item.path contains 'writings/'" | sort: "date" | reverse %}
+
+      {% assign topics = "" | split: "" %}
+      {% for w in all_writings %}
+        {% if w.topic and w.topic != "" %}
+          {% unless topics contains w.topic %}
+            {% assign topics = topics | push: w.topic %}
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
+
+      {% if topics.size > 0 %}
+      <div class="topic-filters">
+        <button class="topic-chip active" data-topic="all">All</button>
+        {% for t in topics %}
+        <button class="topic-chip" data-topic="{{ t | downcase }}">{{ t }}</button>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      <div class="writings-grid">
+        <section class="feed">
+          {% for w in all_writings %}
+          <article class="feed-entry" data-topic="{{ w.topic | downcase }}">
+            <div class="feed-meta">
+              <time datetime="{{ w.date | date: '%Y-%m-%d' }}">{{ w.date | date: "%b %-d, %Y" }}</time>
+              {% if w.topic %}<span class="dot">·</span><span class="feed-topic">{{ w.topic }}</span>{% endif %}
+              {% if w.content %}<span class="dot">·</span><span class="feed-readtime">{{ w.content | reading_time }}</span>{% endif %}
+            </div>
+            <h2 class="feed-title">
+              <a href="{{ site.baseurl }}{{ w.url }}">{{ w.title }}</a>
+            </h2>
+            <p class="feed-excerpt">{{ w.excerpt | strip_html }}</p>
+            {% if w.tags %}
+            <div class="feed-tags">
+              {% for tag in w.tags %}<span class="feed-tag">{{ tag }}</span>{% endfor %}
+            </div>
+            {% endif %}
+            <a class="feed-readmore" href="{{ site.baseurl }}{{ w.url }}">Read more →</a>
+          </article>
+          {% endfor %}
+
+          {% if all_writings.size == 0 %}
+          <p class="feed-empty">Nothing here yet. Soon.</p>
+          {% endif %}
+        </section>
+
+        <aside class="index-panel">
+          <h3 class="index-heading">All Posts</h3>
+          {% assign grouped = all_writings | group_by: "topic" %}
+          {% for group in grouped %}
+          <div class="index-group">
+            <h4 class="index-group-title">{{ group.name | default: "Other" }}</h4>
+            <ul class="index-list">
+              {% for w in group.items %}
+              <li><a href="{{ site.baseurl }}{{ w.url }}">{{ w.title }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endfor %}
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    (function(){
+      var chips = document.querySelectorAll('.topic-chip');
+      var entries = document.querySelectorAll('.feed-entry');
+      chips.forEach(function(chip){
+        chip.addEventListener('click', function(){
+          chips.forEach(function(c){ c.classList.remove('active'); });
+          chip.classList.add('active');
+          var topic = chip.getAttribute('data-topic');
+          entries.forEach(function(e){
+            if(topic === 'all' || e.getAttribute('data-topic') === topic){
+              e.style.display = '';
+            } else {
+              e.style.display = 'none';
+            }
+          });
+        });
+      });
+    })();
+  </script>
+  <script src="{{ site.baseurl }}/theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{%- comment -%}
+  Spoiler warning banner.
+  Usage:
+    {% include spoiler.html works="Worm, Pact" %}
+    {% include spoiler.html works="Worm" note="Through arc 19." %}
+{%- endcomment -%}
+<aside class="spoiler-warning" role="note" aria-label="Spoiler warning">
+  <div class="spoiler-warning-icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2 L22 20 H2 Z"/>
+      <line x1="12" y1="9" x2="12" y2="14"/>
+      <circle cx="12" cy="17.5" r="0.6" fill="currentColor" stroke="none"/>
+    </svg>
+  </div>
+  <div class="spoiler-warning-body">
+    <div class="spoiler-warning-label">Spoiler warning</div>
+    {% if include.works %}
+    <p class="spoiler-warning-text">
+      This post contains spoilers for <strong>{{ include.works }}</strong>.{% if include.note %} {{ include.note }}{% endif %}
+    </p>
+    {% else %}
+    <p class="spoiler-warning-text">
+      {% if include.note %}{{ include.note }}{% else %}This post contains spoilers. Read at your own peril.{% endif %}
+    </p>
+    {% endif %}
+  </div>
+</aside>
