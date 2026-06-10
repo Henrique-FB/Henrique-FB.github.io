@@ -2,7 +2,13 @@
   "permissions": {
     "allow": [
       "Bash(python3 *)",
-      "Bash(bundle exec *)"
+      "Bash(bundle exec *)",
+      "Bash(magick -version)",
+      "Bash(convert -version)",
+      "Bash(rsvg-convert --version)",
+      "Bash(inkscape --version)",
+      "Bash(python -c \"import cairosvg; print\\('cairosvg ok'\\)\")",
+      "Bash(python -c \"from PIL import Image; print\\('PIL ok'\\)\")"
     ]
   }
 }
