@@ -14,7 +14,7 @@ This is a series of posts I'm making to show off the things in media I love. In 
 
 When my posts spoil something, I'll leave a spoiler tag like this:
 
-{% include spoiler.html works="Worm" note="Specifically, I'll be spoiling Armsmaster story up to Interlude 11d" %}
+{% include spoiler.html works="Stormlight Archive" note="Specifically, I'll be spoiling the ending of book 1, The Way of Kings" %}
 
 Okay, so, let me get to the point already.
 
@@ -55,7 +55,7 @@ One of the characters of the book is a windspren, Syl, a little fairy that makes
 
 She starts out by pointing out that there are 'Bindspren' near the stone that the main character made stick to the wall. They have a quick exchange about the nature of these fairies and what they mean, and the main character, blunt as always, quickly brushes it aside, going back to his plan of trying to hide this new power he discovered by getting rid of the light that comes off of the stone he stuck to the wall.
 
-Its an interesting thing to think about idly, but to the main character this holds no importance. Its the kind of thing kids ask about, and that is what he takes this interaction for. Syl, a childlike little spirit, asking silly questions about the nature of the universe.
+It's an interesting thing to think about idly, but to the main character this holds no importance. It's the kind of thing kids ask about, and that is what he takes this interaction for. Syl, a childlike little spirit, asking silly questions about the nature of the universe.
 
 This exchange, at least to my recollection, isn't mentioned again until the very end of the book.
 
@@ -65,7 +65,7 @@ At the end of the book, our main character finds himself in a bind.
 
 A big chunk of his life he has been beaten to the ground, enslaved, and mistreated by the militia of his country. In the middle of a big battle in the war his country is waging against an enemy, he notices he (and his companions, all who have been mistreated by these same people for months) has the opportunity to leave a neighbouring army (not his, but from his country) to die in this battle against the enemy, and use that opportunity to flee, and be free of his shackles.
 
-Honestly, it is only through reading the book that you can see why this is even a question to begin with. The main character has always been an upstanding person, wanting to help others as much as possible, but right now he does not want to think of others. He wants to be free. He is packing his thing to leave, to abandon that army to be slaughtered, until this happens:
+Honestly, it is only through reading the book that you can see why this is even a question to begin with. The main character has always been an upstanding person, wanting to help others as much as possible, but right now he does not want to think of others. He wants to be free. He is packing his things to leave, to abandon that army to be slaughtered, until this happens:
 
 > Kaladin turned to survey his men, and was shocked to see someone standing beside him. A woman of translucent white light.
 > 
