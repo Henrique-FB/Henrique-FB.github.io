@@ -4,7 +4,7 @@ title: "Stuff To Live For: Are Windspren Attracted to Wind, or Do They Make It?"
 permalink: /writings/windspren
 date: 2026-06-10
 topic: Literature
-tags: ["the-way-of-kings", "stormlight-archive", "prose", "philosophy", "kindness"]
+tags: ["the-way-of-kings", "stormlight-archive", "prose", "philosophy"]
 excerpt: "An analysis of a certain moment of The Way of Kings."
 ---
 
@@ -35,7 +35,7 @@ One of my favorite interactions between characters in this book speaks exactly a
 
 Throughout the story, we see little creatures called "spren". They are faeries that, to the eyes of the people in the book's world, cause certain things to happen. There are many kinds of these little faeries. Rotspren make things rot. Heatspren create heat, and so on. In this world, you would see these 'spren' everywhere. By the thousands, "making things happen".
 
-One of the characters of the book is a windspren, Syl, a little fairy that makes wind. This particular one, different from the rest of them, can talk. Through the book we get to know her deeply. She is a carefree, almost childlike figure in the book, and one interaction the main character has with her around the middle to end of the book (remember, this is like, a 1000ish page book) happens when he notices that he has a magical power to "bind" things in place (like, stick a stone to a wall sort of thing).
+One of the characters of the book is a windspren, Syl, a little fairy that makes wind. This particular one, different from the rest of them, can talk. Through the book we get to know her deeply. She is a carefree, almost childlike figure in the book, and one interaction the main character has with her around the middle to end of the book happens when he notices that he has a magical power to "bind" things in place (like, stick a stone to a wall sort of thing).
 
 > “Bindspren,” Syl said, walking up beside his head; she was still standing in the air.
 > 

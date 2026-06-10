@@ -3,12 +3,12 @@ Pure-Liquid reading time. Lives here (not _plugins/) because GitHub Pages
 builds with --safe and ignores custom plugins, so the old reading_time
 Ruby filter never ran there. Pass the rendered content as include.content.
 
-180 wpm; rounds to the nearest minute, anything under a minute shows
-"30 seconds". Labels come from the reading_time block in _config.yaml.
+180 wpm; rounds to the nearest minute. Output is a self-describing label
+like "~7 min read" so it reads as an average estimate; under a minute
+shows "< 1 min read". Unit label comes from reading_time in _config.yaml.
 {%- endcomment -%}
 {%- assign rt = site.reading_time -%}
-{%- assign min_label = rt.minute_plural | default: "minutes" -%}
-{%- assign sec_label = rt.second_plural | default: "seconds" -%}
+{%- assign min_label = rt.minute_plural | default: "min" -%}
 {%- assign words = include.content | strip_html | number_of_words -%}
 {%- assign minutes = words | plus: 90 | divided_by: 180 -%}
-{%- if minutes == 0 -%}30 {{ sec_label }}{%- else -%}{{ minutes }} {{ min_label }}{%- endif -%}
+{%- if minutes == 0 -%}&lt; 1 {{ min_label }} read{%- else -%}~{{ minutes }} {{ min_label }} read{%- endif -%}

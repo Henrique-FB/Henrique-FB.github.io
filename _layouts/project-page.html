@@ -28,7 +28,7 @@
 
 
     <main class="content">
-      <p class="emphasized">{{ page.project_date }}</p>
+      <p class="emphasized">{{ page.project_date }}{% if content %} · <span title="Estimated average reading time">{% include reading_time.html content=content %}</span>{% endif %}</p>
 
       <div class="project-page">
         {{ content }}
