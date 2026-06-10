@@ -215,6 +215,13 @@ body {
   -webkit-box-orient: vertical;
 }
 
+.card-readtime {
+  color: #9ca3af;
+  font-size: 0.7rem;
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.02em;
+}
+
 .card-tags {
   display: flex;
   flex-wrap: wrap;

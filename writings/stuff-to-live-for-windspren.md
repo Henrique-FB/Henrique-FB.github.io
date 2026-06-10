@@ -57,7 +57,7 @@ She starts out by pointing out that there are 'Bindspren' near the stone that th
 
 Its an interesting thing to think about idly, but to the main character this holds no importance. Its the kind of thing kids ask about, and that is what he takes this interaction for. Syl, a childlike little spirit, asking silly questions about the nature of the universe.
 
-This exchange, at least to my recolection, isn't mentioned again until the very end of the book.
+This exchange, at least to my recollection, isn't mentioned again until the very end of the book.
 
 ## Are windspren attracted to wind, or do they make it?
 
@@ -65,7 +65,7 @@ At the end of the book, our main character finds himself in a bind.
 
 A big chunk of his life he has been beaten to the ground, enslaved, and mistreated by the militia of his country. In the middle of a big battle in the war his country is waging against an enemy, he notices he (and his companions, all who have been mistreated by these same people for months) has the opportunity to leave a neighbouring army (not his, but from his country) to die in this battle against the enemy, and use that opportunity to flee, and be free of his shackles.
 
-Honestly, it is only through reading the book that you can see why this is even a question to begin with. The main character has always been an upstanding person, wanting to help others as much as possible, but right now he does not want to think of others. He wants to be free. He is packing his thing to leave, to abandon that army to be slaugthered, until this happens:
+Honestly, it is only through reading the book that you can see why this is even a question to begin with. The main character has always been an upstanding person, wanting to help others as much as possible, but right now he does not want to think of others. He wants to be free. He is packing his thing to leave, to abandon that army to be slaughtered, until this happens:
 
 > Kaladin turned to survey his men, and was shocked to see someone standing beside him. A woman of translucent white light.
 > 
@@ -83,7 +83,7 @@ Honestly, it is only through reading the book that you can see why this is even 
 >
 > “I bind things, Kaladin,” she said, turning and meeting his eyes. “I am honorspren. Spirit of oaths. Of promises. And of nobility.”
 
-This interaction has *so many* layers to it, each as intersting as the last.
+This interaction has *so many* layers to it, each as interesting as the last.
 
 
 ### For Kaladin
@@ -100,7 +100,7 @@ Syl then tells him she found out the kind of Spren she is, and still he treats h
 
 > “Is this the time for it, Syl?”
 
-Even at her mention of Honorspren, his reaction isn't to respond to her. His subcontious throws him into a loop of different memories, finally understanding what this question really means (we'll get there).
+Even at her mention of Honorspren, his reaction isn't to respond to her. His subconscious throws him into a loop of different memories, finally understanding what this question really means (we'll get there).
 
 ### For Syl
 
@@ -112,7 +112,7 @@ In this moment, she remembers what kind of spren she is, and this question in th
 
 > "Are windspren attracted to wind, or do they make it?"
 
-She remembers that she is in fact not a windspren, but Honorspren, and seeing herself abandon those people to be slaugthered, this becomes a question of who, in essence, *she* is. 
+She remembers that she is in fact not a windspren, but Honorspren, and seeing herself abandon those people to be slaughtered, this becomes a question of who, in essence, *she* is. 
 
 Are Honorspren attracted to honorable actions, or do they *make* them. What should *she* do. If she was what made noble and honorable actions happen, then what does that mean for her right now, in the middle of abandoning people to die?
 
@@ -132,9 +132,9 @@ And she comes to a conclusion. Indeed, perhaps not.
 
 Firstly, this is an interesting callback to a previous interaction that Kaladin and Syl had earlier in the book.
 
-This is also an amazing reflaction of who Kaladin and Syl are, and the reelationship between them. Its also extremely realistic. 
+This is also an amazing reflection of who Kaladin and Syl are, and the relationship between them. Its also extremely realistic. 
 
-Kaladin, the big brother, is used to treating Syl like a child, and quickly jumps to that modus operandi in this stressful situation. Syl, on the other hand, is having an extremely important moment where she realises who she really is, and in turn, being the actual adult in the interaction, takes Kaladin's now "child-like" view of who she is as exactly what it is. Childish. She doesn't barrate him for being annoyed at her, she doesn't even engage in his remarks. She mostly ignores him, sort of lost in her own thoughts about what is happening.
+Kaladin, the big brother, is used to treating Syl like a child, and quickly jumps to that modus operandi in this stressful situation. Syl, on the other hand, is having an extremely important moment where she realises who she really is, and in turn, being the actual adult in the interaction, takes Kaladin's now "child-like" view of who she is as exactly what it is. Childish. She doesn't berate him for being annoyed at her, she doesn't even engage in his remarks. She mostly ignores him, sort of lost in her own thoughts about what is happening.
 
 This interaction, all at once:
 - Wraps Syl's character arc for this book. We now know, at least partly, what she actually is (which is a question that accompanied us through the entire book), we understand more about what she cares for, and she regains consciousness in a way we hadn't ever seen before.
