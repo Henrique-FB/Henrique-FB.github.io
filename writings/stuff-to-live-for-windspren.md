@@ -1,6 +1,6 @@
 ---
 layout: writing-page
-title: "Stuff To Live For: Are Windspren Attracted to Wind, or Do They Make It?"
+title: "Stuff to Live For: Are Windspren Attracted to Wind, or Do They Make It?"
 permalink: /writings/windspren
 date: 2026-06-10
 topic: Literature
